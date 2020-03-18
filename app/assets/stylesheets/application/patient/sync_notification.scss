@@ -1,0 +1,27 @@
+.syncNotification {
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  width: 320px;
+  max-width: 500px;
+  display: flex;
+  background-color: #ff890a;
+  color: #fff;
+  padding: 10px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  width: 100%;
+  margin-bottom: 18px;
+
+  svg {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    vertical-align: super;
+  }
+  
+  span {
+    display: inline-block;
+  }
+}
+

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <div style="text-align:center;">
+      <img style="display:inline-block; max-width: 400px;" src="<%= attachments['email-logo.png'].url %>" alt="Starfield Health" />
+    </div>
+
+    <img style="display:inline-block; max-width: 400px;margin-top:40px" src="<%= attachments['email-head1.png'].url %>" alt="Starfield Health" />
+
+    <p style="color: #5e5957; font: 20px Arial;"><%= DateTime.now.strftime("%B %d, %Y") %></p>
+
+    <p style="color: #5e5957; font: 20px Arial;">Hello!</p>
+
+    <p style="color: #5e5957; font: 20px Arial;">You have reasons why your health is important to you
+    and you’re taking steps toward a happier, healthier life.</p>
+
+    <p style="color: #5e5957; font: 20px Arial;">Now it’s time to add the skills and the right team.</p>
+
+    <p style="color: #5e5957; font: 20px Arial;">Just a few more questions and we’re ready to start.
+    We can’t wait to see where we go together!</p>
+
+
+    <div style="text-align:center; margin-top: 40px;">
+      <a href="<%= root_url %>patient-invite/<%= patient.invite_token %>"><img style="display:inline-block; max-width: 200px;" src="<%= attachments['email-getstarted.png'].url %>" alt="Starfield Health" /></a>
+    </div>
+
+    <img style="display:inline-block; width: 175px; margin-top:40px" src="<%= attachments['email-head2.png'].url %>" alt="Starfield Health" />
+
+    <p style="color: #5e5957; font: 20px Arial;">We’re building a world where we all have access to brilliant healthcare
+    that works.</p>
+
+    <p style="color: #5e5957; font: 20px Arial;">Starfield Health supports our communities with honest, thoughtfully
+    designed care from an amazing team of professionals.</p>
+
+    <p style="color: #5e5957; font: 20px Arial;">Your healthcare should move with you, which is why Starfield Health is
+    mobile first-your care team should fit into your life, not the other way
+    around!</p>
+
+    <p style="color: #5e5957; font: 20px Arial;">This is healthcare for the modern age. And we’re just getting started.</p>
+
+    <p style="color: #5e5957; font: 24px Arial; text-align:center; margin-top: 40px;">Need help or have questions?<br />
+    Send a message to <a href="mailto: info@starfield.health" style="text-decoration: none; color:#f8890b;">info@starfield.health</a></p>
+
+    <p style="color: #5e5957; font: 16px Arial; text-align:center;">Starfield Health, all rights reserved.<br />
+    1641 Capitol Way, Bismarck, ND 58501</p>
+  </body>
+</html>

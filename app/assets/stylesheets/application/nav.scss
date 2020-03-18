@@ -1,0 +1,26 @@
+.navSelected {
+  background-color: $primary-orange;
+  border-radius: 5px;
+}
+
+.adminFunctions {
+  .container {
+    @include responsive-container-media-queries;
+    padding-left: 120px;
+  }
+  .menuLink {
+    display: block;
+    width: 65%;
+    margin-left: auto;
+    margin-right: auto;
+    color: #ffffff;
+    background-color: #f8890b;
+    border-radius: 4px;
+    // font-size: 16px;
+    font-family: $font-qs-medium;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-top: 20px;
+  }
+}

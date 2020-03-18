@@ -1,0 +1,38 @@
+.tabContainer {
+  margin-bottom: 0px;
+}
+
+.tabContainer .MuiTab-wrapper {
+  text-transform: none;
+  font-size: 20px;
+  font-weight: 700;
+  font-family: 'QuicksandMedium';
+}
+
+.tabContainer .MuiTab-root {
+  padding: 12px 16px;
+  margin-right: 16px;
+  background-color: #bbb9b7;
+  color: #1E1E1E;
+  border-radius: 4px 4px 0 0;
+  font-weight: 500;
+}
+.tab {
+  text-transform: none !important;
+  font-family: inherit !important;
+}
+
+.tab.Mui-selected {
+  color: #fff !important;
+  font-weight: 700;
+  background-color: #ff890a;
+  
+}
+
+.tab.Mui-focusVisible {
+  background-color: #d1eaff;
+}
+
+.indicator {
+  background-color: #FFA500 !important;
+}

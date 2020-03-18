@@ -1,0 +1,64 @@
+<% headers = [
+'Customer Name', #1
+'Customer County', #2
+'Last Name', #3
+'First Name', #4
+'Middle Name', #5
+'Date of Birth', #6
+'Gender', #7
+'MRN', #8
+'Address', #9
+'City', #10
+'State', #11
+'Zip', #12
+'County', #13
+'Race', #14
+'Ethnicity', #15
+'Insurance Type', #16
+'Insurance Name', #17
+'Insurance ID#', #18
+'Provider Name', #19
+'Encounter Date', #20
+'Encounter Type', #21
+'Place of Service', #22
+'Claim Date Sent', #23
+'Billing CPT Code(s)', #24,
+'Diagnosis Codes', #25
+'Modifier', #26
+'Rendering Provider', #27
+'Charge Dollar Amount', #28
+] %>
+<%= CSV.generate_line headers -%>
+<%- @data.each do |datum| -%>
+    <%= CSV.generate_line([
+        sanitize_string(datum["customer_name"]), #1
+        sanitize_string(datum["customer_county"]), #2
+        sanitize_string(datum["last_name"]), #3
+        sanitize_string(datum["first_name"]), #4
+        sanitize_string(datum["middle_name"]), #5
+        sanitize_string(datum["date_of_birth"]), #6
+        sanitize_string(datum["gender"]), #7
+        sanitize_string(datum["mrn_number"]), #8 
+        sanitize_string(datum["address"]), #9
+        sanitize_string(datum["city"]), #10
+        sanitize_string(datum["state"]), #11
+        sanitize_string(datum["zip"]), #12
+        sanitize_string(datum["county"]), #13
+        sanitize_string(datum["race"]), #14
+        sanitize_string(datum["ethnicity"]), #15
+        sanitize_string(datum["insurance_type"]), #16
+        sanitize_string(datum["plan_name"]), #17
+        sanitize_string(datum["insured_id"]), #18
+        sanitize_string(datum["provider_name"]), #19
+        sanitize_string(datum["day_of_encounter"]), #20
+        sanitize_string(datum["encounter_type"]), #20
+        sanitize_string(datum["place_of_service"]), #21
+        sanitize_string(datum["date_claim_sent"]), #22
+        sanitize_string(datum["cpt_codes"]), #23
+        sanitize_string(datum["diagnosis_codes"]), #24
+        sanitize_string(datum["modifier"]), #25
+        sanitize_string(datum["rendering_provider"]), #26
+        sanitize_string(datum["total_charge"]), #27
+        ]) 
+    -%>
+<%-end-%>

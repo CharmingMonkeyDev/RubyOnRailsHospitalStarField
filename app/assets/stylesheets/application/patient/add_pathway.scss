@@ -1,0 +1,54 @@
+.add-pathway-modal {
+  .paper {
+    @include paper-default-md;
+  }
+  .paperInner {
+    @include paper-inner-default-md;
+  }
+  .inviteHeader {
+    font-size: 16px;
+    font-family: $font-qs-medium;
+    margin-bottom: 0;
+    text-align: left;
+  }
+  .textInput {
+    @include input-base(100%);
+    margin-top: 10px;
+  }
+  .weeksLabel {
+    font-size: 14px;
+    font-family: $font-qs-medium;
+  }
+  .textAlignCenter {
+    text-align: center;
+  }
+  .fontQuicksandMedium30 {
+    font-size: 30px;
+    font-family: $font-qs-medium;
+  }
+  .cursorPointer {
+    cursor: pointer;
+  }
+  .colorBlack {
+    color: #000000;
+  }
+  .textDecorationHoverNone {
+    &:hover {
+      text-decoration: none;
+    }
+  }
+  .fontQuicksandMedium22 {
+    font-size: 22px;
+    font-family: $font-qs-medium;
+  }
+  .centerButton {
+    text-align: center;
+    margin-top: 10px;
+  }
+  .clearButtonStyling {
+    @include button-clear;
+  }
+  .nextButton {
+    @include button-next;
+  }
+}

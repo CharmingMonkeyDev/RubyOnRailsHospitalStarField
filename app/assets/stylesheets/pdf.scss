@@ -1,0 +1,113 @@
+@media print {
+  @page {
+    margin: 10in !important;
+    padding: 10;
+    size: letter;
+  }
+  @page :first {
+    margin-top: 0 !important;
+  }
+
+  @page :second {
+    margin-top: 10px !important;
+  }
+
+  html,
+  body {
+    margin: 0in;
+    padding: 0;
+    size: letter;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+}
+
+body .header,
+body .main-wrapper {
+  font-family: "QuicksandMedium", "Roboto", "Helvetica", "Arial", sans-serif;
+}
+
+.header {
+  display: block;
+  text-align: center;
+
+  width: 100%;
+  padding: 10px 5px;
+  border-bottom: 2px solid #ff890a;
+  margin-bottom: 20px;
+  margin-top: 0px;
+  padding-top: 0px;
+  h1 {
+    color: #ff890a;
+    font-weight: normal;
+    font-size: 40px;
+    vertical-align: top;
+    margin-top: 5px;
+  }
+}
+
+.header img {
+  max-height: 100px;
+  max-width: 100%;
+  vertical-align: top;
+}
+
+.medication-list ul {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  color: black;
+  background-color: white;
+}
+
+.title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.gray-box {
+  border: 3px solid rgba(128, 128, 128, 0.2);
+  padding: 15px;
+  margin-bottom: 20px;
+  background-color: white;
+  border-radius: 3px;
+}
+
+.gray-box p {
+  margin: 0;
+}
+
+.gray-box ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.gray-box .medication-name {
+  margin-bottom: 10px;
+}
+
+.footer {
+  padding-top: 10px;
+  margin-top: 20px;
+  font-size: 12px;
+  text-align: center;
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer span {
+  float: left;
+}
+
+.main-wrapper {
+  padding-left: 65px;
+  padding-right: 65px;
+}

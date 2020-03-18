@@ -1,0 +1,7 @@
+<%= react_component("customer_selections/New", {
+    csrfToken: form_authenticity_token,
+    user_id: current_user.id,
+    logo_src: image_url('logo.png'),
+    button_src: image_url('login_button.svg'),
+    customers: @customers
+}) %>

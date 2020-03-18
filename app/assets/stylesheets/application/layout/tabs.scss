@@ -1,0 +1,31 @@
+.tabs-container {
+  .tabs-link {
+    background-color: $color-grey-text;
+    color: white;
+    margin-right: 10px;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+  }
+
+  .tabs-link.Mui-selected {
+    color: white;
+    background-color: #ff890a solid 2px;
+    border-bottom: none;
+  }
+  .tab-body-container {
+    // margin-top: -5px;
+    border: #ff890a solid 2px;
+    background-color: white;
+    border-top: none;
+  }
+  .MuiTabs-flexContainer {
+    margin-top: -1px;
+  }
+  .MuiTabs-root,
+  .MuiTabs-fixed {
+    overflow: visible !important;
+  }
+  .MuiBox-root-168 {
+    padding: 5px;
+  }
+}

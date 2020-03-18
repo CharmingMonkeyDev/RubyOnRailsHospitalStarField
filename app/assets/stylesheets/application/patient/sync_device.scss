@@ -1,0 +1,150 @@
+.sync-device {
+  margin-top: 80px;
+  @media (min-width: 600px) {
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    width: 500px;
+  }
+  .pageHeading {
+    @include page-heading;
+  }
+  .centerText {
+    text-align: center;
+  }
+
+  .pageTitle {
+    text-align: center;
+    span {
+      font-size: 26px;
+      font-family: $font-qs-medium;
+    }
+    p {
+      font-size: 16px;
+      font-family: $font-qs-bold;
+    }
+  }
+  .deviceForm2 {
+    padding: 20px;
+  }
+
+  .deviceForm {
+    padding: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    box-shadow: 1px 1px 1px 1px #efefef;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    button {
+      font-size: 16px;
+      font-family: $font-qs-bold;
+      background: none !important;
+      border: none;
+      outline: none;
+    }
+
+    .unlinkButton {
+      margin-top: 28px;
+      color: #ff0000;
+      cursor: pointer;
+      font-size: 14px;
+      font-family: $font-qs-bold;
+    }
+
+    .textInput {
+      width: 80%;
+      margin-bottom: 10px;
+      border-radius: 6px;
+      background-color: #fcf6f4;
+      font-family: $font-qs-bold;
+      fieldset {
+        border: none;
+        outline: none;
+      }
+      .PrivateNotchedOutline-root-164,
+      .jss33 {
+        border-color: $color-primary-orange !important;
+        border-width: 2px;
+      }
+    }
+  }
+  .centerButton {
+    text-align: center;
+    margin-top: 10px;
+    width: 100%;
+  }
+  .clearButtonStyling {
+    @include button-clear;
+  }
+  .nextButton {
+    @include button-next;
+  }
+  .basicButton {
+    @include button-basic(20px);
+    font-family: $font-qs-medium;
+    margin-top: 15px;
+  }
+  .syncButton {
+    border: none;
+    padding: 30px 0;
+    width: 100%;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+    text-align: center;
+    color: #ffffff;
+    background-color: #ff8906;
+    border-radius: 4px;
+    font-family: $font-qs-medium;
+    display: inline-block;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+  .alert {
+    border: 1px solid #dbe3e6;
+  }
+  .textInput {
+    border: none;
+    outline: none;
+    width: 70%;
+    background-color: $background-grey;
+    border-radius: 5px;
+    margin-left: 10px;
+  }
+}
+
+.confirm-unlink-modal {
+  background-color: #fff;
+  padding: 28px;
+  border-radius: 10px;
+  width: 300px;
+  margin-top: 128px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: $font-qs-bold;
+
+  .title {
+    font-size: 30px;
+    margin-bottom: 12px;
+  }
+
+  p {
+    text-align: center;
+    font-size: 16px;
+    margin: 0 0 32px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .confirm-unlink-modal {
+    width: 75%;
+  }
+}

@@ -1,0 +1,46 @@
+.add-patient-container-modal {
+  .add-patient-body {
+    width: 60%;
+    background-color: white;
+    margin: auto;
+    margin-top: 100px;
+    border-radius: 5px;
+    padding: 75px;
+    text-align: center;
+
+    .logo-container {
+      margin-bottom: 25px;
+
+      .logo {
+        position: relative;
+        top: 15px;
+      }
+    }
+
+    .left-panel {
+      border-right: 2px solid $color-primary-orange;
+    }
+
+    .header {
+      font-size: 24px;
+      font-weight: bold;
+      color: $color-dark-grey-text;
+      padding-bottom: 20px;
+    }
+
+    .content-body {
+      color: $color-dark-grey-text;
+      margin-bottom: 20px;
+    }
+
+    .button {
+      @include button-basic(12pt);
+      margin: auto;
+      margin-top: 15px;
+    }
+  }
+
+  .add-patient-body:focus {
+    outline: none !important;
+  }
+}

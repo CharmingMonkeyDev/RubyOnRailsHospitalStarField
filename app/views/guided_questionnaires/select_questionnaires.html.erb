@@ -1,0 +1,8 @@
+<%= react_component("guided_questionnaires/SelectQuestionnaires", {
+    qrId: params[:id],
+    csrfToken: form_authenticity_token,
+    categories: @selected_categories.as_json(methods: :displayable_questionnaires),
+    logo_src: image_url('logo_starfield_health.svg'),
+    button_src: image_url('login_button.svg'),
+    token: params[:token]
+}) %>

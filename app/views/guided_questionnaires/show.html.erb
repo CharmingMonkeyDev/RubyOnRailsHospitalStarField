@@ -1,0 +1,12 @@
+<%= react_component("guided_questionnaires/CategorySelect", {
+    qrId: params[:id],
+    csrfToken: form_authenticity_token,
+    categories: @ordered_categories,
+    logo_src: image_url('logo_starfield_health.svg'),
+    button_src: image_url('login_button.svg'),
+    userName: @patient.name,
+    userBirthDate: @patient.date_of_birth.strftime("%m/%d/%Y"),
+    userMrnNumber: @patient.mrn_number,
+    token: params[:token],
+    selected_categories: params[:selected_categories] && params[:selected_categories].split(',').map(&:to_i)
+}) %>

@@ -1,0 +1,229 @@
+.immunization-container {
+  @include responsive-container-media-queries;
+  padding: 10px 24px 24px 120px;
+  background-color: #888;
+
+  .immunization-header-section {
+      display: flex;
+      padding: 0px 24px;
+      align-items: center;
+      gap: 15px;
+      flex-shrink: 0;
+      border-radius: 4px;
+      background: var(--white, #FFF);
+      margin-bottom: 18px;
+      .immunization-header-text {
+          color: #000;
+          font-size: 24px;
+          font-style: normal;
+          font-weight: 700;
+          line-height: normal;
+      }
+  }
+	input#date-picker-inline::placeholder {
+		color: #868382 !important;
+		opacity: 1;
+	}
+	
+}
+
+.immunization-result {
+  color: var(--med-grey, #4A4442);
+  font-feature-settings: 'liga' off, 'clig' off;
+  font-size: 21px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 26px;
+  margin: 0
+}
+
+.immunization-container .css-1umvz2c-MuiStack-root {
+  padding: 16px 24px !important;
+}
+
+.immunization-count-container {
+  display: flex;
+  padding: 1px 10px;
+  flex-direction: column;
+  justify-content: center;
+  flex-shrink: 0;
+  border-radius: 30px;
+  background: var(--off-white, #EFE9E7);
+  margin-left: 12px;
+  margin-right: 12px;
+  color: var(--dark-grey, #1E1E1E);
+  text-align: center;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 16px; 
+}
+
+.advanced-search-container {
+  padding: 0 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--off-white, #EFE9E7);
+  height: 42.25px !important;
+  border-radius: 4px;
+  flex-shrink: 0;
+  cursor: pointer;
+
+  .advanced-search-text {
+      color: var(--dark-grey, #1E1E1E);
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 16px;
+      margin: 0 16px 0 8px;
+  }
+}
+
+.popover-filter-container {
+  padding: 16px 0;
+  width: 274px !important;
+  height: 648px !important;
+  font-style: normal;
+  line-height: 16px;
+  .header {
+      color: var(--dark-grey, #1E1E1E);
+      font-size: 16px;
+      font-weight: 700;
+      padding: 0 20px;
+      margin: 0;
+  }
+  .header-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 20px 0 0px;
+  }
+  .tag-number {
+      color: #A29D9B;
+      font-size: 10px;
+      font-weight: 400;
+      line-height: 16px;
+      padding: 0 20px; 
+      margin: 0 0 10px 0;
+  }
+  .clear-all {
+    color: var(--primary-orange, #ff890a);
+    font-size: 10px;
+    font-weight: 700;
+    background: none;
+    border: none;
+    cursor: pointer;
+    gap: 5px;
+    display: flex;
+  }
+  .collapse-list-header {
+      color: var(--dark-grey, #1E1E1E);
+      font-size: 12px;
+      font-weight: 700;
+      margin: 0;
+  }
+
+  .collapse-list-text {
+      color: var(--dark-grey, #1E1E1E);
+      font-size: 10px;
+      font-weight: 500;
+  }
+
+  .view-all {
+      color: var(--primary-orange, #FF890A);
+      font-size: 10px;
+      font-weight: 700;
+      background: none;
+      border: none;
+      cursor: pointer; 
+  }
+  .multiple-checkbox {
+		.option-text {
+			gap: 5px;
+			display: flex;
+			font-size: 10px !important;
+		}
+	}
+}
+
+.multiple-checkbox {
+  .checkbox-row-containter {
+      margin-bottom: 14px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      .option-text {
+          color: var(--dark-grey, #1E1E1E);
+          font-size: 10px;
+          font-style: normal;
+          font-weight: 500;
+          line-height: 16px;
+          display: flex;
+          flex-direction: row;
+          align-items: end;
+          margin: 0
+      }
+
+      .checkbox {
+          margin-right: 6px;
+      }
+  }
+
+  .no-margin-bottom {
+      margin-bottom: 0 !important;
+  }
+}
+
+.multiple-checkbox input[type="checkbox"] {
+  accent-color: #FF890A;
+  width: 12px;
+  height: 12px;
+  box-sizing: border-box;
+}
+
+.multiple-checkbox input[type="checkbox"]:checked {
+  appearance: none;
+  background-color: #FF890A; 
+  border: 1px solid #FF890A;
+  position: relative;
+  border-radius: 3px;
+  box-sizing: border-box;
+}
+
+.multiple-checkbox input[type="checkbox"]:checked::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 3px;
+  width: 3px;
+  height: 6px;
+  border: solid white;
+  border-width: 0 1px 1px 0;
+  transform: rotate(45deg);
+  display: block;  
+}
+
+.table-body-link {
+text-decoration: underline !important;
+color: var(--dark-grey, #1E1E1E) !important;
+}
+
+.immunization-container #date-picker-inline {
+  padding: 0 0 0 10px !important;
+}
+
+.immunization-container .MuiInputAdornment-root button {
+  margin-bottom: 15px;
+}
+
+.immunization-container {
+  .date-container  {
+    width: 100%;
+  }
+  .date-container .MuiInputBase-root{
+    height: 100%;  //fixes date picker padding
+  }
+}
+

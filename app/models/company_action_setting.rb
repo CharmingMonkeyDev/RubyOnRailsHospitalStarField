@@ -1,0 +1,2 @@
+class CompanyActionSetting < ApplicationRecord
+end

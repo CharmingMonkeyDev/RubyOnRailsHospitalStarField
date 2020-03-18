@@ -1,0 +1,157 @@
+body.no-login {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+}
+
+.sms-notifications-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background-color: #fff;
+
+  .phone-container {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 15px;
+    width: 100%;
+
+    input {
+      margin-top: 4px;
+    }
+  }
+
+  .container {
+    padding-left: 0;
+    padding-right: 0;
+    width: auto;
+    margin-top: 20px;
+  }
+
+  .adminHeader {
+    width: 100%;
+    text-align: center;
+    padding: 10px 0px;
+  }
+}
+
+.sms-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 5px;
+  background-color: $color-primary-orange;
+  color: #fff;
+}
+
+.sms-header img {
+  max-height: 100px;
+  max-width: 100%;
+}
+
+.opt-out-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+}
+
+.opt-out-container p {
+  text-align: center;
+}
+
+.opt-out-container .option-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  input {
+    margin-right: 5px;
+  }
+
+  label {
+    font-size: 14px;
+  }
+}
+
+.opt-out-container input[type="text"] {
+  width: 100%;
+  padding: 10px 0;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.opt-out-container .sign-in {
+  padding: 10px 0;
+  font-size: 16px;
+  background-color: $color-primary-orange;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  width: 100%;
+  text-align: center;
+  text-decoration: none;
+}
+
+.opt-out-container .sign-in,
+.opt-out-container input[type="submit"] {
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.opt-out-container input[type="submit"] {
+  padding: 10px 0;
+  font-size: 16px;
+  background-color: $color-primary-orange;
+  color: #fff;
+  border: none;
+  border-radius: 4px !important;
+  width: 100%;
+}
+
+.opt-out-container input[type="submit"]:hover {
+  background-color: $color-primary-orange;
+}
+
+.options-wrapper {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+@media screen and (max-width: 960px) {
+  .opt-out-container {
+    border: none;
+    box-shadow: none;
+    padding: 0 16px;
+
+    .phone-container {
+      width: 100%;
+      input {
+        width: 100%;
+      }
+    }
+    input[type="submit"] {
+      width: 100%;
+    }
+  }
+  .sms-notifications-body .container {
+    margin-top: 0;
+  }
+}

@@ -1,0 +1,202 @@
+////////////////////////
+//  MEDIA QUERIES AND UTILITY MIXINS
+////////////////////////
+
+@mixin responsive-container-media-queries {
+  @media screen and (max-width: 1024px) {
+    padding: 10px;
+  }
+
+  @media screen and (max-width: 600px) {
+    margin-right: 0;
+    margin-left: 0;
+  }
+}
+
+@mixin responsive-grid-item-media-queries {
+  @media screen and (max-width: 1024px) {
+    margin: 10px;
+  }
+
+  @media (max-width: 600px) {
+    box-shadow: none;
+    border-radius: 0;
+    padding: 10px;
+  }
+}
+
+////////////////////////
+//  PAPER MIXINS
+////////////////////////
+
+@mixin paper-default($width) {
+  width: $width;
+  margin-top: 6%;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #fff;
+  box-shadow: #ff0000;
+  border: 1px solid #dbe3e6;
+
+  &:active {
+    outline: none;
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
+
+@mixin paper-default-lg {
+  @include paper-default(640px);
+  border-radius: 8px;
+
+  @media (max-width: 600px) {
+    width: 94vw;
+  }
+  @media (max-width: 640px) {
+    width: 100%;
+  }
+}
+
+@mixin paper-default-md {
+  @include paper-default(480px);
+  padding: 16px 32px 24px;
+  border-radius: 4px;
+
+  @media (max-width: 600px) {
+    margin-top: 0;
+    width: 100%;
+    padding: 0;
+    min-height: 100vh;
+  }
+}
+
+@mixin paper-inner-default-lg {
+  padding: 16px 32px 24px;
+
+  @media (max-width: 600px) {
+  }
+}
+
+@mixin paper-inner-default-md {
+  padding: 0 !important;
+
+  @media (max-width: 600px) {
+    padding: 16px 32px 24px;
+  }
+}
+
+////////////////////////
+//  BUTTON MIXINS
+////////////////////////
+
+// Button style used for save buttons.
+@mixin button-basic($fontSize) {
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  background: #ff890a;
+  font-family: $font-qs-bold;
+  font-size: $fontSize;
+  width: 150px;
+  height: 40px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+// Button style for clear buttons.
+@mixin button-clear {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+  text-align: center;
+}
+
+@mixin button-next {
+  background: none;
+  border: none;
+  padding: 10px;
+  padding-left: 55px;
+  padding-right: 55px;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+  text-align: center;
+  color: #ffffff;
+  background-color: #ff8906;
+  border-radius: 4px;
+  font-family: $font-qs-medium;
+  margin-top: 20px;
+  display: inline-block;
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+@mixin button-back {
+  font-size: 30px;
+  font-family: $font-qs-medium;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: -6px;
+}
+
+////////////////////////
+//  INPUT MIXINS
+////////////////////////
+
+@mixin input-base($width) {
+  width: $width;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  background-color: #fcf6f4;
+  // Choosing not to include margin-top at this time since there are a few occasions where this isn't a part of the style.
+}
+
+////////////////////////
+//  COMMON PAGE COMPONENTS
+////////////////////////
+
+@mixin page-heading {
+  border-bottom: 1px solid #948b87;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+}
+
+@mixin info-section {
+  width: 85%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  box-shadow: 1px 1px 1px 1px #efefef;
+  padding: 10px;
+}
+
+@mixin centered-block($bottom-margin) {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  margin-top: 30px;
+  margin-bottom: $bottom-margin;
+  max-width: 100%;
+}
+
+@mixin modal-container {
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  width: 500px;
+  margin-top: 90px;
+  @media (max-width: 600px) {
+    width: 100%;
+  }
+}

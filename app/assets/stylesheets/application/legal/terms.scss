@@ -1,0 +1,37 @@
+#terms {
+  padding-left: 120px;
+  margin-left: -18px;
+
+  @media (max-width: 600px) {
+    padding-left: 0px;
+    margin-left: 10px;
+  }
+}
+
+#terms-small {
+  overflow: scroll;
+  max-height: 65vh;
+  width: 98%;
+  padding-left: 1%;
+  padding-right: 1%;
+}
+
+.add-action-modal.terms-modal .paper {
+  width: 400px;
+  font-size: 14px;
+  max-width: 100%;
+
+  .paperInner {
+    max-height: 100vh;
+  }
+}
+
+.terms-container {
+  margin-left: 25%;
+  margin-right: 25%;
+  margin-bottom: 50px;
+  @media (max-width: 600px) {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+}

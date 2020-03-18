@@ -1,0 +1,17 @@
+{
+    "name": "Starfield",
+    "scripts": {
+        "postdeploy": "rails db:migrate"
+    },
+    "environments": {
+        "review": {
+            "addons": [
+                "heroku-postgresql:hobby-dev",
+                "rollbar:free"
+            ],
+            "scripts": {
+                "postdeploy": "bundle exec rails db:seed"
+            }
+        }
+    }
+}

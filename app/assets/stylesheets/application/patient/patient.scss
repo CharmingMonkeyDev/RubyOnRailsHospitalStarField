@@ -1,0 +1,809 @@
+// removes edit icon from selected label
+.MuiSelect-root .action-icon {
+  display: none !important;
+}
+
+.remove-patient-add-patient-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  // margin-top: -40px;
+}
+
+.modal {
+  .MuiFilledInput-inputMarginDense {
+    padding-top: 14px;
+    padding-bottom: 14px;
+  }
+  .paper {
+    max-height: 95vh;
+    overflow: scroll;
+  }
+}
+
+.patient-show-container,
+.insurance-show-container,
+.provider-show-container {
+  border-radius: 5px;
+  margin-top: 85px !important;
+
+  .information-container {
+    background-color: white;
+    border-radius: 5px;
+
+    .expand-icon {
+      margin: auto;
+    }
+
+    .divider {
+      border: 1px solid $color-primary-orange;
+    }
+  }
+
+  .customer-relation-container {
+    background-color: white;
+    margin-top: 10px;
+    border-radius: 5px;
+    .association-header {
+      margin-left: 50px;
+      font-size: 18px;
+      @media (max-width: 1400px) {
+        font-size: 14px;
+      }
+    }
+    .button-container {
+      text-align: right;
+      margin-right: 20px;
+      margin-top: 15px;
+    }
+    .divider {
+      border: 2px solid $color-primary-orange;
+    }
+  }
+
+  .admin-header {
+    font-size: 18px;
+    @media (max-width: 1400px) {
+      font-size: 14px;
+    }
+    font-family: $font-qs-medium;
+    padding-left: 50px;
+    padding-right: 20px;
+    display: flex;
+    align-items: center;
+
+    .header-label {
+      @media (max-width: 1400px) {
+        font-size: 14px;
+      }
+    }
+  }
+
+  .border-bottom {
+    border-bottom: 2px solid $color-primary-orange;
+    @media (max-width: 1400px) {
+      margin-top: 5px;
+      padding-bottom: 5px;
+    }
+  }
+
+  .move-a-little-down {
+    margin-top: 10px;
+  }
+
+  .secondary-label {
+    font-size: 20px;
+    @media (max-width: 1400px) {
+      font-size: 14px;
+    }
+    margin-left: 20px;
+    font-weight: bold;
+  }
+
+  .provider-info-left-container,
+  .patient-info-left-container {
+    margin-left: 20px;
+    color: $font-grey;
+  }
+
+  .form-left-container {
+    margin-left: 40px;
+  }
+
+  .invitation-btn-container {
+    margin-bottom: 15px;
+  }
+
+  .provider-info-right-container,
+  .patient-info-right-container {
+    color: $font-grey;
+    padding-bottom: 10px;
+  }
+
+  .insurance-right-column {
+    margin-right: 35px;
+  }
+
+  .info-label {
+    font-weight: 300;
+    color: $color-dark-grey-text;
+    font-size: 15px;
+    @media (max-width: 1400px) {
+      font-size: 13px;
+    }
+    font-family: $font-qs-medium;
+  }
+
+  .insurance-label {
+    margin-bottom: 20px;
+  }
+
+  .info-value {
+    font-weight: 300;
+    margin-left: 10px;
+    margin-top: 2px;
+    margin-bottom: 12px;
+    color: $color-dark-grey-text;
+    font-size: 18px;
+    font-family: $font-qs-medium;
+    overflow-wrap: break-word;
+    min-height: 31px;
+    @media (max-width: 1522px) {
+      font-size: 14px;
+    }
+  }
+  .user-type-icon {
+    border: 2px solid $color-grey-text;
+    color: $status-green;
+    vertical-align: middle;
+    border-radius: 50%;
+  }
+
+  .app-user-icon {
+    color: $status-green;
+  }
+
+  .non-app-user-icon {
+    color: red;
+  }
+
+  .invite-app-user-link {
+    text-decoration: none;
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .invite-app-user-link:hover {
+    text-decoration: none;
+  }
+
+  .invite-app-user-icon {
+    color: $color-primary-orange;
+  }
+
+  .app-user-text {
+    font-size: 16px;
+    color: black;
+    font-weight: bold;
+    font-family: $font-qs-bold;
+  }
+
+  .action-icon {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    cursor: pointer;
+    margin-left: 22px;
+    height: 50px;
+    justify-content: center;
+    text-align: center;
+    color: $color-dark-grey-text;
+    &-disabled {
+      @extend .action-icon;
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
+    .action-icon-image {
+      display: inline-block;
+      margin-bottom: 8px;
+      width: 30px;
+      @media (max-width: 1400px) {
+        width: 25px;
+        margin-bottom: 3px;
+      }
+    }
+
+    .priv-icon {
+      margin-bottom: 13px;
+    }
+
+    p {
+      margin: 0;
+      padding: 0;
+      font-family: $font-qs-medium;
+      font-size: 9px;
+      color: #a29d9b;
+      text-decoration: none;
+    }
+    .text-center {
+      text-align: center;
+    }
+  }
+
+  .customer-association-table-container {
+    margin-right: 10px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    max-height: 300px;
+    overflow-y: scroll;
+
+    .association-table {
+      width: 100%;
+      color: $font-qs-medium;
+      border-collapse: collapse;
+
+      .first-column-header {
+        text-align: left;
+        display: inline-block;
+        margin-left: 40px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+      }
+
+      tbody {
+        tr:nth-child(odd) {
+          background-color: $background-grey;
+        }
+        tr {
+          text-align: center;
+
+          td {
+            padding: 10px;
+            color: black;
+
+            .pending-circle {
+              display: inline-block;
+              width: 20px;
+              background-color: #ebe208;
+              height: 20px;
+              border-radius: 50%;
+              text-align: center;
+            }
+
+            .accepted-circle {
+              display: inline-block;
+              width: 20px;
+              background-color: #07bc2a;
+              height: 20px;
+              border-radius: 50%;
+              text-align: center;
+            }
+
+            .inactive-circle {
+              display: inline-block;
+              width: 20px;
+              background-color: red;
+              height: 20px;
+              border-radius: 50%;
+              text-align: center;
+            }
+          }
+        }
+      }
+
+      .first-column-data {
+        text-align: left;
+        padding-left: 40px;
+      }
+
+      .other-column {
+        text-align: left;
+      }
+    }
+  }
+}
+
+.divider {
+  width: 100%;
+}
+
+.MuiSelect-select {
+  align-items: left;
+}
+
+.patientlist-selector.customer-selector {
+  margin-left: 0 !important;
+  margin-top: 15px !important;
+}
+
+.modal,
+.patient-index-container,
+.customer-list {
+  .patient-search-container {
+    margin-top: -17px;
+    color: white;
+
+    .search-form-label {
+      margin-bottom: 0px;
+    }
+
+    .form-label {
+      font-size: 16px;
+    }
+
+    .search-switch {
+      text-align: right;
+      margin-right: 20px;
+
+      .switch {
+        font-size: 10px;
+        margin-top: 10px;
+        margin-right: 11px;
+      }
+
+      .search-button-container {
+        margin-top: 33px;
+        margin-right: 10px;
+        margin-bottom: 10px;
+
+        .search-button {
+          background-color: $primary-orange;
+          padding: 10px;
+          border-radius: 5px;
+          color: white;
+          display: inline-block;
+          width: 210px;
+          text-align: center;
+          cursor: pointer;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+  .invite-container {
+    padding-top: 15px;
+  }
+  .bulk-upload-container {
+    padding-right: 30px;
+    padding-left: 30px;
+  }
+  .adminHeader {
+    .add-patient-label {
+      float: left;
+      font-family: $font-qs-medium;
+      color: #a29d9b;
+      margin-top: 8px;
+    }
+  }
+
+  .addLink {
+    text-align: right;
+    padding-right: 40px;
+    margin-top: 15px;
+    @media (max-width: 946px) {
+      text-align: left;
+    }
+  }
+  .table {
+    width: 100%;
+  }
+  .tableContainer {
+    padding-left: 40px;
+    padding-right: 40px;
+    margin-top: 30px;
+
+    @media (max-width: 1510px) {
+      padding-left: 25px;
+      padding-right: 25px;
+    }
+
+    .name-header {
+      width: 205px;
+      @media (max-width: 1400px) {
+        width: 95px;
+      }
+    }
+
+    .name-header.provider {
+      @media (max-width: 1782px) {
+        width: 95px;
+      }
+    }
+
+    .sort-icon {
+      @media (max-width: 1510px) {
+        width: 8px;
+      }
+    }
+  }
+  .sortIndicator {
+    display: inline-block;
+    margin-left: 10px;
+    @media (max-width: 1510px) {
+      margin-left: 5px;
+    }
+    padding-top: 5px;
+  }
+  .sortIndicator.provider {
+    @media (max-width: 1782px) {
+      margin-left: 5px;
+    }
+  }
+  .row {
+    background-color: #efe9e7;
+  }
+  .tableCell {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-family: $font-qs-medium;
+    color: $color-dark-grey-text;
+  }
+
+  .table-header {
+    @media (max-width: 1700px) {
+      font-size: 12px;
+    }
+  }
+  .table-header.provider {
+    @media (max-width: 1782px) {
+      font-size: 12px;
+    }
+  }
+
+  .textInput {
+    @include input-base(100%);
+    margin-top: 10px;
+  }
+  .container {
+    @include responsive-container-media-queries;
+    padding-left: 120px;
+  }
+  .menuLink {
+    display: block;
+    width: 180px;
+    color: #ffffff;
+    background-color: #f8890b;
+    border-radius: 4px;
+    font-size: 16px;
+    font-family: $font-qs-medium;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-top: 20px;
+  }
+  .alert {
+    border: 1px solid #dbe3e6;
+  }
+}
+
+.invite-container {
+  border-bottom: 2px solid $color-primary-orange;
+
+  .search-result-label {
+    margin-left: 40px;
+  }
+
+  .button-container {
+    text-align: right;
+    padding-right: 40px;
+  }
+}
+
+.modal,
+.patient-edit-container,
+.patient-insurance-edit-container,
+.manual-patient-modal-body,
+.add-patient-modal,
+.provider-container {
+  border-radius: 5px;
+  // margin-top: 80px;
+  padding-bottom: 20px;
+  max-height: 80vh;
+  overflow-y: auto;
+
+  .action-container {
+    margin-top: 10px;
+  }
+
+  .align-with-form {
+    margin-right: 42px;
+  }
+
+  .patient-edit-header {
+    font-size: 18px;
+    font-family: $font-qs-medium;
+    border-bottom: 4px solid $color-primary-orange;
+    padding-left: 30px; 
+		padding-right: 30px;
+  }
+
+  .patientlist-table {
+    .MuiTableCell-root {
+      padding: 10px;
+    }
+  }
+
+  .cancel-link {
+    display: inline-block;
+    // margin-top: 15px;
+    color: black;
+    cursor: pointer;
+    margin-right: 20px;
+  }
+
+  .save-btn {
+    display: inline-block;
+    width: 100px;
+    background-color: $primary-orange;
+    text-align: center;
+    border-radius: 5px;
+    padding: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    color: white;
+    cursor: pointer;
+  }
+
+  .save-btn:hover {
+    text-decoration: none;
+  }
+
+  .secondary-label {
+    font-size: 21px;
+    margin-left: 20px;
+    font-weight: bold;
+  }
+  .patient-info-left-container {
+    margin-left: 10px;
+    color: $font-grey;
+  }
+
+  .form-left-container {
+    margin-left: 40px;
+  }
+
+  .form-header {
+    text-align: center;
+    font-size: 22px;
+    font-weight: bold;
+  }
+
+  .form-container {
+    padding-bottom: 10px;
+    .field-label {
+      margin-top: 20px;
+      padding: 10px;
+      font-size: 18px;
+    }
+
+    .field-label2 {
+      margin-top: 10px;
+      padding: 8px;
+      font-size: 18px;
+    }
+    .field-container {
+      margin-left: 10px;
+      .the-field {
+        width: 95%;
+        background-color: $background-grey;
+        border-radius: 5px;
+
+        fieldset {
+          border: none;
+          outline: none;
+        }
+      }
+    }
+
+    .date-field-container {
+      margin-left: 9px;
+      .date-field {
+        width: 95%;
+        margin-top: 0px;
+      }
+    }
+  }
+}
+
+.modal {
+  .save-btn {
+    padding: 14px;
+  }
+}
+
+.patient-edit-form {
+  background-color: white;
+}
+
+.unsaved-changes-modal-container {
+  .main-header {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+  }
+
+  .content {
+    text-align: center;
+    margin-right: 45px;
+    margin-left: 45px;
+  }
+
+  .confirm-btn-container {
+    text-align: center;
+    .confirm-btn {
+      background-color: $primary-orange;
+      border-radius: 5px;
+      padding: 10px;
+      display: inline-block;
+      width: 200px;
+      color: white;
+      cursor: pointer;
+    }
+
+    .confirm-btn:hover {
+      text-decoration: none;
+    }
+  }
+
+  .new-customer-button-container {
+    margin-top: 30px;
+    margin-left: -30px;
+  }
+
+  .cancel-link-container {
+    text-align: center;
+    .cancel-link {
+      color: black;
+      cursor: pointer;
+      text-decoration: underline;
+      cursor: pointer;
+    }
+  }
+
+  .paper {
+    width: 640px;
+    max-width: 100%;
+  }
+
+  .customer-paper {
+    margin-top: 8%;
+  }
+
+  .paperInner {
+    @include paper-inner-default-lg;
+  }
+
+  .textInput {
+    @include input-base(100%);
+    margin-top: 10px;
+  }
+}
+
+.patient-container {
+  .container2 {
+    @include responsive-container-media-queries;
+    padding-left: 120px;
+    // margin-left: -18px;
+    margin-right: 30px;
+    @media screen and (max-width: 1024px) {
+      margin-left: 0px;
+    }
+  }
+  .paper {
+    @include paper-default-lg;
+  }
+  .paperInner {
+    @include paper-inner-default-lg;
+  }
+}
+
+.manual-patient-modal {
+  width: 60%;
+  background-color: white;
+  margin: auto;
+  margin-top: 50px;
+  border-radius: 5px;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+.add-patient-modal {
+  .paper {
+    @include paper-default-md;
+  }
+  .paperInner {
+    padding: 0 !important;
+    @media (max-width: 600px) {
+      padding: 0;
+    }
+  }
+  .inviteHeader {
+    font-size: 22px;
+    font-family: $font-qs-medium;
+    margin-bottom: 0;
+    text-align: "center";
+  }
+  .textInput {
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    background-color: #fcf6f4;
+  }
+  .clearButtonStyling {
+    @include button-clear;
+  }
+  .centerButton {
+    text-align: center;
+    margin-top: 10px;
+  }
+}
+
+.insurance-show-container,
+.patient-insurance-edit-container {
+  margin-top: 0px !important;
+}
+
+.manual-patient-modal {
+  max-width: 850px;
+  padding-left: 50px;
+  padding-right: 50px;
+  .button-container {
+    margin-top: 40px;
+  }
+}
+
+.patient-header-icon {
+  display: inline-block;
+  width: 70px;
+}
+
+.patient-dob-field {
+  .MuiInputBase-formControl {
+    padding-left: 10px !important;
+  }
+}
+
+.follow-up-modal {
+  .fum-header {
+    font-size: 21px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding: 24px;
+  }
+  .fum-form-container {
+    // padding: 24px;
+  }
+
+  .fum-field-label {
+    color: $dark-grey-font-color;
+    line-height: 23px;
+  }
+
+  .fum-close-icon-container {
+    display: flex;
+    align-items: center;
+  }
+}
+
+
+// General patient ifno panel css
+.page-heading{
+  @include page-heading;
+}
+
+.back-button{
+  @include button-back;
+}
+
+.page-title{
+  text-align: center;
+    span {
+      font-size: 26px;
+      font-family: $font-qs-medium;
+    }
+}

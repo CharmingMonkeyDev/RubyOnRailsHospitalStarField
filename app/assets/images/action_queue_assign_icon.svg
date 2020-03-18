@@ -1,0 +1,18 @@
+<svg id="complete_all_actions" data-name="complete all actions" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="55" height="17" viewBox="0 0 66.529 20.308">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Rectangle_233" data-name="Rectangle 233" width="18.478" height="20.308" fill="#4a4442"/>
+    </clipPath>
+  </defs>
+  <g id="Group_930" data-name="Group 930" transform="translate(-293.115 -393)">
+    <path id="Icon_ionic-md-person" data-name="Icon ionic-md-person" d="M14.654,14.654A5.077,5.077,0,1,0,9.577,9.577,5.092,5.092,0,0,0,14.654,14.654Zm0,2.539C11.291,17.193,4.5,18.906,4.5,22.27v2.539H24.808V22.27C24.808,18.906,18.017,17.193,14.654,17.193Z" transform="translate(323.5 388.5)" fill="#4a4442"/>
+    <path id="Icon_metro-plus" data-name="Icon metro-plus" d="M7.092,3.678h-1.6v-1.6a.146.146,0,0,0-.146-.146H4.467a.146.146,0,0,0-.146.146v1.6h-1.6a.146.146,0,0,0-.146.146V4.7a.146.146,0,0,0,.146.146h1.6v1.6a.146.146,0,0,0,.146.146h.875a.146.146,0,0,0,.146-.146v-1.6h1.6A.146.146,0,0,0,7.238,4.7V3.824A.146.146,0,0,0,7.092,3.678Z" transform="translate(337.461 405.399)" fill="#fff"/>
+  </g>
+  <path id="Icon_feather-check" data-name="Icon feather-check" d="M16.617,9l-7.3,7.3L6,12.981" transform="translate(47.79 -3.846)" fill="none" stroke="#4a4442" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+  <path id="Icon_ionic-md-arrow-round-forward" data-name="Icon ionic-md-arrow-round-forward" d="M13.314,18.435,18.5,13.407a1.143,1.143,0,0,0,.338-.841v-.015a1.143,1.143,0,0,0-.338-.841L13.314,6.682a1.11,1.11,0,0,0-1.621,0,1.241,1.241,0,0,0,0,1.7l3.115,2.98H6.777a1.2,1.2,0,0,0,0,2.4H14.8l-3.115,2.98a1.241,1.241,0,0,0,0,1.7A1.114,1.114,0,0,0,13.314,18.435Z" transform="translate(16.05 -2.702)" fill="#4a4442"/>
+  <g id="Group_995" data-name="Group 995" transform="translate(0 0)">
+    <g id="Group_978" data-name="Group 978" clip-path="url(#clip-path)">
+      <path id="Path_226" data-name="Path 226" d="M14.509,0a2.108,2.108,0,1,0,2.109,2.107A2.108,2.108,0,0,0,14.509,0M5.779,3.426a2.108,2.108,0,0,0-1.619.758L1.84,6.967a1.055,1.055,0,0,0,1.621,1.35L5.724,5.6l2.66.3-2.417,3.4a2.086,2.086,0,0,0,.614,3.052v0l4.353,2.333.679,4.509v.05a1.054,1.054,0,0,0,2.108.03V13.441a1.054,1.054,0,0,0-.5-.9l-3.084-1.9,1.832-2.622.8,1.124.008.019a1.055,1.055,0,0,0,.947.59h3.69a1.054,1.054,0,1,0,.03-2.108H14.376L13.014,4.868q-.019-.04-.041-.076a2.767,2.767,0,0,0-1.567-1.207,4.738,4.738,0,0,0-1.415-.159Zm-.1,9.653-.668,1.534L1.3,15.022H1.069a1.054,1.054,0,1,0-.03,2.108H5.813a1.056,1.056,0,0,0,1.014-.722l1.279-2.132c-.618-.253-1.817-.887-2.427-1.2" transform="translate(0 0)" fill="#4a4442"/>
+    </g>
+  </g>
+</svg>

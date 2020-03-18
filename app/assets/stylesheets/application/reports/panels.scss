@@ -1,0 +1,572 @@
+.panel-container {
+  background-color: white;
+  margin-top: 26px;
+  border-radius: 1px;
+  width: 100%;
+
+  .admin-header {
+    .box-header {
+      .user-type-icon {
+        border: 2px solid $color-grey-text;
+        color: $status-green;
+        vertical-align: middle;
+        border-radius: 50%;
+        width: 32px;
+        height: 32px;
+      }
+
+      .app-user-icon {
+        color: $status-green;
+      }
+
+      .non-app-user-icon {
+        color: red;
+      }
+
+      .right-spacing {
+        margin-right: 32px;
+      }
+
+      .invite-app-user-link {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        margin-left: 30px;
+      }
+
+      .invite-app-user-icon {
+        color: $color-primary-orange;
+      }
+
+      .app-user-text {
+        color: var(--light-grey, #A29D9B);
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 26px;
+        margin-left: 10px;
+      }
+
+      .app-user-text:hover {
+        text-decoration: none;
+        cursor: pointer;
+      }
+
+      .disable-pointer:hover{
+        cursor: default;
+      }
+
+      .save-btn {
+        display: flex;
+        width: 130px;
+        height: 42px;
+        justify-content: center;
+        align-items: center;
+        border-radius: 4px;
+        background: var(--primary-orange, #FF890A);
+        color: white;
+        box-shadow: 0px 3px 5px -2px rgba(0, 0, 0, 0.20), 0px 2px 3px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
+        margin-left: 32px;
+      }
+    }
+  }
+
+  .action-icon {
+    display: inline-grid;
+    margin-right: 15px;
+    color: $color-dark-grey-text;
+    line-height: 0;
+    height: 100%;
+    align-items: center;
+  }
+
+  .panel-show-container {
+    .action-container {
+      text-align: right;
+      margin-right: 20px;
+
+      .action-link {
+        color: black;
+        cursor: pointer;
+        font-family: $font-qs-bold;
+        text-decoration: none;
+        font-size: 20px;
+        color: $color-grey-text;
+
+        .plus-icon {
+          border: 2px solid $color-grey-text;
+          color: $color-primary-orange;
+          vertical-align: middle;
+          border-radius: 50%;
+        }
+      }
+
+      .action-link:hover {
+        text-decoration: none;
+      }
+    }
+
+    .add-encounter, .add-lab {
+      margin-left: auto;
+      .plus-icon {
+        border: 2px solid $color-grey-text;
+        color: $color-primary-orange;
+        vertical-align: middle;
+        border-radius: 50%;
+      }
+      color: black;
+      cursor: pointer;
+      font-family: $font-qs-bold;
+      text-decoration: none;
+      font-size: 20px;
+      color: $color-grey-text;
+    }
+
+    .panel-information-container {
+      .grey-container {
+        padding: 20px;
+        background-color: $subtle-grey;
+      }
+      .labs-container {
+        .rmp-header {
+          text-align: center;
+          background-color: $color-grey-text;
+          color: white;
+          margin-left: 15px;
+          margin-right: 15px;
+          padding: 5px;
+          border-radius: 10px;
+          margin-bottom: 15px;
+        }
+      }
+
+      .data-body-container {
+        padding-left: 15px;
+        padding-right: 15px;
+
+        .data-container-parent {
+          margin-left: 0px;
+          margin-bottom: 20px;
+
+          .data-container {
+            border-radius: 5px;
+            padding: 0px;
+            flex-basis: 20%;
+
+            .single-lab-header {
+              text-align: center;
+              color: white;
+              padding: 5px;
+              background-color: $color-grey-text;
+              border-top-left-radius: 5px;
+              border-top-right-radius: 5px;
+            }
+
+            .data-row {
+              padding: 5px;
+              display: flex;
+              justify-content: space-between;
+              border: 1px solid $color-dark-grey-text;
+              border-top: none;
+              background-color: white;
+
+              .data-value {
+                font-size: 16px;
+              }
+              .data-date {
+                font-size: 12px;
+                display: flex;
+                align-items: center;
+                color: $color-grey-text;
+              }
+            }
+            .data-row:hover {
+              cursor: pointer;
+            }
+          }
+          .dc-mr {
+            margin-right: 6%;
+          }
+        }
+      }
+
+      .medication-container,
+      .care-plan-container {
+        .add-medication-btn {
+          text-align: right;
+          margin-right: 20px;
+          padding-left: 15px;
+          padding-bottom: 15px;
+
+          .btn-link {
+            background-color: $color-grey-text;
+            color: white;
+            padding: 6px;
+            border-radius: 6px;
+            cursor: pointer;
+          }
+        }
+
+        .medication-table-container {
+          padding-bottom: 20px;
+          background-color: white;
+        }
+      }
+
+      .care-plan-container {
+        .check-box-container {
+          text-align: center;
+        }
+
+        .action-container {
+          margin-bottom: 10px;
+          text-align: left;
+
+          .action-text {
+            font-size: 18px;
+            margin-bottom: 5px;
+          }
+
+          .action-subtext {
+            font-size: 14px;
+            padding-left: 15px;
+          }
+        }
+      }
+
+      .general-patient-info-container {
+        background-color: #EFE9E8;
+        padding: 24px;
+
+        .badge-container {
+          background: #FFFFFF;
+          width: 100%; 
+          border-radius: 4px;
+          padding: 8px 16px;
+          margin-bottom: 20px;
+        }
+
+        .info-container {
+          background-color: #FFFFFF;
+          padding: 10px 24px 10px 24px;
+
+          .no-result-text {
+            color: var(--dark-grey, #1E1E1E);
+            text-align: center;
+            font-size: 13px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 18px;
+
+            .underline_text {
+              color: var(--secondary-blue, #3F51B5);
+              text-decoration-line: underline;
+              cursor: pointer;
+            }
+          }
+
+          .patient-edit-container {
+            .form-container {
+              padding-bottom: 10px;
+
+              .field-label {
+                margin-top: 20px;
+                padding: 10px 10px 4px 0;
+                color: #A29D9B;
+                font-size: 12px;
+                font-style: normal;
+                font-weight: 700;
+                line-height: 18px;
+              }
+
+              .field-container {
+                margin-left: 0;
+
+                .the-field {
+                  width: 95%;
+                  background-color: #EFE9E7;
+                  border-radius: 5px;
+                  color: #4A4442;
+                  font-size: 14px;
+                  font-style: normal;
+                  font-weight: 500;
+                  line-height: 21px;
+
+                  fieldset {
+                    border: none;
+                    outline: none;
+                  }
+                }
+
+                .date-box {
+                  background-color: #EFE9E7;
+                  border-radius: 5px;
+                  & > .MuiStack-root {
+                    padding-top: 0px;
+                  }
+                }
+              }
+            }
+          }
+        }
+
+        .divider {
+          height: 1px;
+          flex-shrink: 0;
+          background: #D9D9D9;
+          margin: 3px 0 3px 5px;
+        }
+
+        .overview-container {
+          font-size: 18px;
+          font-style: normal;
+          font-weight: 700;
+          letter-spacing: 1px;    
+
+          .header-text-container {
+            margin-left: 15px;
+
+            .medical_id_text {
+              margin-left: 25px;
+              color: #A29D9B;
+              margin-top: 15px;
+              margin-bottom: 7px;
+            }
+
+            .overview-header {
+              color: #4A4442;
+              margin-top: 15px;
+              margin-bottom: 7px;
+            }
+
+            .facility-details {
+              color: #707070;
+              font-size: 14px;
+              font-weight: 500;
+              line-height: 18px;
+              margin-top: 0;
+            }
+
+            .facility-phone-number {
+              margin-top: 0;
+            }
+
+          }
+
+          .overview-detail {
+            color: #707070;
+            font-size: 14px;
+            font-weight: 500;
+            margin-top: 0;
+          }
+        }
+
+        .detail-container {
+          font-style: normal;
+
+          .detail-header {
+            color: #A29D9B;
+            font-size: 14px;
+            font-weight: 700;
+            margin-bottom: 5px;
+          }
+
+          .detail-text {
+            color: #4A4442;
+            font-size: 12px;
+            font-weight: 600;
+            margin-top: 0;
+            margin-bottom: 2px;
+          }
+        }
+      }
+    }
+  }
+
+  .panel-body {
+    background-color: white;
+    padding-bottom: 15px;
+
+    .adt-notif-container {
+      text-align: right;
+
+      .link {
+        text-decoration: underline;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.grey-container {
+  background-color: $panel-grey;
+}
+
+.pad-top-10 {
+  padding-top: 10px;
+}
+
+.padding-top-0 {
+  padding-top: 0 !important;
+}
+
+// staring BEM for each module and this is for panels module
+
+.action-icon-container {
+  display: flex;
+  align-items: center;
+  width: 60px;
+  justify-content: center;
+}
+
+.data-row-caret {
+  text-align: center;
+  border: 1px solid $color-dark-grey-text;
+  border-top: none;
+  background-color: $color-grey-text;
+  height: 22px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.box-header {
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.6); 
+  z-index: 2;
+  background: white;
+}
+
+.item-icon-container {
+  display: flex;
+  width: 41px;
+  height: 41px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  background: #EFE9E7;
+  cursor: pointer;
+}
+
+.facility-icon-container {
+  width: 80px;
+  height: 80px;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  .radio-label {
+    color: #A29D9B;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 22px;
+    letter-spacing: -0.1px;
+  }
+}
+
+.space-between {
+  justify-content: space-between;
+}
+
+.label-tag-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 40px;
+  padding: 4px 8px;
+  margin-left: 30px;
+  margin-top: 10px;
+  background: var(--toast-green, #EDF7EE);
+
+  .label-tag {
+    color: #07BC2A;
+    font-size: 8px;
+    font-style: normal;
+    font-weight: 600;
+    margin: 0;
+  }
+
+  .secondary-tag {
+    color: var(--primary-orange, #FF890A);
+  }
+
+  .tertiary-tag {
+    color: #B08800;
+  }
+}
+
+.secondary-container {
+  background: var(--peach, #FFF0DF);
+}
+
+.tertiary-container {
+  background: #FFF0BE;
+}
+
+.underline-button {
+  color: var(--secondary-blue, #3F51B5);
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  text-decoration-line: underline;
+}
+
+.table-header {
+  color: #000;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  font-family: $font-qs-medium;
+}
+
+.table-body-text {
+  color: var(--dark-grey, #1E1E1E);
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 18px;
+}
+
+.facility-search-text {
+  color: var(--dark-grey, #1E1E1E);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 16px; 
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.facility-modal-header-text {
+  color: #000 !important;
+  font-size: 21px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 0.5px;
+}
+
+.facility-modal-header {
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.panel-header {
+  color: var(--med-grey, #4A4442);
+  font-feature-settings: 'liga' off, 'clig' off;
+  font-size: 21px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 26px;
+}
+
+.overflow-ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 264px;
+}

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <div style="text-align:center;">
+      <img style="display:inline-block; max-width: 400px;" src="<%= attachments['email-logo.png'].url %>" alt="Starfield Health" />
+    </div>
+
+    <img style="display:inline-block; max-width: 400px;margin-top:40px" src="<%= attachments['email-head9.png'].url %>" alt="Starfield Health" />
+
+    <p style="color: #5e5957; font: 20px Arial;"><%= DateTime.now.strftime("%B %d, %Y") %></p>
+
+    <p style="color: #5e5957; font: 20px Arial;">Hello <%= patient.name %>:</p>
+
+    <p style="color: #5e5957; font: 20px Arial;">Your email address has been updated successfully. If you didn’t request this change, please click below.</p>
+
+    <div style="text-align:center; margin-top: 40px;">
+      <a href="<%= root_url %>undo-email/<%= email_token %>"><img style="display:inline-block; max-width: 500px;" src="<%= attachments['email-email.png'].url %>" alt="Starfield Health" /></a>
+    </div>
+
+    <p style="color: #5e5957; font: 24px Arial; text-align:center; margin-top: 15px;">Need help or have questions?<br />
+    Send a message to <a href="mailto: info@starfield.health" style="text-decoration: none; color:#f8890b;">info@starfield.health</a></p>
+
+    <p style="color: #5e5957; font: 16px Arial; text-align:center;">Starfield Health, all rights reserved.<br />
+    1641 Capitol Way, Bismarck, ND 58501</p>
+  </body>
+</html>

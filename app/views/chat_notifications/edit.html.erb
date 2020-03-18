@@ -1,0 +1,50 @@
+<div class="sms-notifications-body">
+  <header class="sms-header">
+    <%= image_tag('logo_white.svg', alt: 'Starfield Logo') %>
+    <h1 style="disaply: inline-block; margin-left: 20px"> starfield health </h1>
+  </header>
+
+  <div class="adminHeader"> 
+    <h3> SMS Notifications </h3>
+  </div>
+
+  <div class="container">
+    <%= form_tag chat_notification_path, method: :patch, class: "opt-out-container" do %>
+      <p> This is your optional reminders service for communications with your provider within the Starfield application. </p>
+
+      <p> If you are attempting to access the login for Starfield, please use the link here
+      </p>
+
+      <%= link_to "Starfield Login", new_user_session_path, class: "sign-in" %> 
+
+      <p> If you would like to opt in or opt out of receiving text messages from Starfield, please select or deselect the below options. </p>
+
+      <div class="options-wrapper"> 
+        <div class="option-container">
+          <%= radio_button_tag 'chat_notify', true, @user.chat_notify %>
+          <%= label_tag 'chat_notify', 'Opt-in' %>
+        </div>
+
+        <div class="option-container">
+          <%= radio_button_tag 'chat_notify', false, !@user.chat_notify%>
+          <%= label_tag 'chat_notify', 'Opt-out' %>
+        </div>
+      </div> 
+
+      <div class= "phone-container">
+        <%= label_tag 'mobile_phone_number', 'Mobile Phone Number', style: "text-align:left; margin-bottom:4px" %>
+        <%= text_field_tag 'mobile_phone_number', nil, placeholder: "Enter phone number" %>
+      </div>
+
+      <%= hidden_field_tag :opt_out_key, params[:opt_out_key] %>
+      <%= submit_tag 'Continue' %>
+    <% end %>
+  </div>
+</div>
+
+<!-- JAVASCRIPT -->
+<script>
+  $(document).ready(function() {
+    $('input[name="mobile_phone_number"]').inputmask('999-999-9999');
+  });
+</script>

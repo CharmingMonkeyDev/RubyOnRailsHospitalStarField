@@ -1,0 +1,261 @@
+.customer-list {
+  .container {
+    @include responsive-container-media-queries;
+    padding-left: 120px;
+  }
+
+  .add-customer-label {
+    float: left;
+    font-family: $font-qs-medium;
+    color: #a29d9b;
+    margin-top: 8px;
+    @media (max-width: 1400px) {
+      font-size: 14px;
+    }
+  }
+
+  table {
+    width: 100%;
+  }
+  .tableContainer {
+    padding-left: 40px;
+    padding-right: 40px;
+    margin-top: 30px;
+  }
+  .row {
+    background-color: #efe9e7;
+  }
+  .tableCell {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-family: $font-qs-medium;
+  }
+  .addLink {
+    text-align: right;
+    justify-content: flex-end !important;
+    padding-right: 40px;
+    margin-top: 15px;
+    @media (max-width: 946px) {
+      text-align: left;
+    }
+  }
+  .sortIndicator {
+    display: inline-block;
+    margin-left: 10px;
+    padding-top: 5px;
+  }
+  .searchArea {
+    margin-right: 30px;
+  }
+  .searchLabel {
+    font-size: 14px;
+    font-family: $font-qs-medium;
+    margin-bottom: 4px;
+    color: #ffffff;
+  }
+  .textInput {
+    @include input-base(45%);
+  }
+ 
+  .patientLink {
+    color: #f8890b;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  .customerInfo {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 17.35px;
+    align-items: flex-start;
+    overflow: hidden;
+  }
+  .customerInfoLabel {
+    font-family: $font-qs-medium;
+    color: $color-dark-grey-text;
+    font-size: 15px;
+    @media (max-width: 1400px) {
+      font-size: 13px;
+    }
+    margin-bottom: 2px;
+  }
+  .customerInfoValue {
+    font-family: $font-qs-medium;
+    color: $color-dark-grey-text;
+    font-size: 18px;
+    @media (max-width: 1400px) {
+      font-size: 14px;
+    }
+    margin-left: 10px;
+  }
+  .customerInfoField {
+    color: $color-dark-grey-text;
+    font-size: 18px;
+    font-family: $font-qs-medium;
+    border: none;
+    outline: none;
+    background: #efe9e7;
+    text-indent: 8px;
+    border-radius: 5px;
+  }
+  .saveButton {
+    @include button-basic(18pt);
+  }
+  .alert {
+    border: 1px solid #dbe3e6;
+  }
+}
+
+.add-customer-modal {
+  .paper {
+    @include paper-default-md;
+  }
+  .paperInner {
+    @include paper-inner-default-md;
+  }
+  .logoStyle {
+    @include centered-block(30px);
+  }
+  .textInput {
+    @include input-base(100%);
+    margin-top: 10px;
+  }
+  .loginLink {
+    color: #313133;
+    text-decoration: underline;
+  }
+  .loginText {
+    color: #939393;
+    display: inline-block;
+    margin-top: 15px;
+  }
+  .clearButtonStyling {
+    @include button-clear;
+  }
+  .inviteHeader {
+    font-size: 16px;
+    font-family: $font-qs-medium;
+    margin-bottom: 0;
+    text-align: center;
+  }
+  .centerButton {
+    text-align: center;
+    margin-top: 10px;
+  }
+  .alert {
+    border: 1px solid #dbe3e6;
+  }
+  .textInputLabel {
+    font-size: 12px;
+    font-family: $font-qs-medium;
+    display: inline-block;
+    margin-top: 10px;
+  }
+  .editPatientRight {
+    padding-left: 10px;
+    @media (max-width: 965px) {
+      padding-left: 0;
+    }
+  }
+  .row {
+    background-color: #efe9e7;
+  }
+}
+
+.show-edit-customer {
+  .container {
+    @include responsive-container-media-queries;
+    padding-left: 12px;
+    margin-left: -18px;
+  }
+  .table {
+    width: 100%;
+  }
+  .tableContainer {
+    padding-left: 50px;
+    padding-right: 40px;
+    margin-top: 30px;
+  }
+  .row {
+    background-color: #efe9e7;
+  }
+  .addLink {
+    margin-top: 0 !important;
+    text-align: right;
+    padding-right: 40px;
+    @media (max-width: 946px) {
+      text-align: left;
+    }
+  }
+  .cancelButton {
+    font-size: 16px;
+    cursor: pointer;
+  }
+  .customerInfo {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 12px;
+    align-items: flex-start;
+  }
+  .customerInfoLabel {
+    font-family: $font-qs-medium;
+    color: $color-dark-grey-text;
+    font-size: 15px;
+    @media (max-width: 1400px) {
+      font-size: 13px;
+    }
+    margin-bottom: 4px;
+  }
+  .customerInfoValue {
+    font-family: $font-qs-medium;
+    color: $color-dark-grey-text;
+    font-size: 18px;
+    @media (max-width: 1400px) {
+      font-size: 14px;
+    }
+    margin-left: 10px;
+  }
+  .customerInfoField {
+    color: $color-dark-grey-text;
+    font-size: 18px;
+    font-family: $font-qs-medium;
+    border: none;
+    outline: none;
+    background: #efe9e7;
+    text-indent: 8px;
+    border-radius: 5px;
+    width: 80%;
+    padding: 10px;
+  }
+  .the-field {
+    width: 80%;
+    background-color: #efe9e7;
+    border-radius: 5px;
+    padding-left: 15px;
+
+    fieldset {
+      border: none;
+      outline: none;
+    }
+  }
+  .saveButton {
+    @include button-basic(18pt);
+  }
+  .actionIcon {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    cursor: pointer;
+    margin-right: 30px;
+    height: 50px;
+    justify-content: space-between;
+
+    p {
+      margin: 0;
+      padding: 0;
+      font-family: $font-qs-medium;
+      font-size: 9px;
+      color: #a29d9b;
+      text-decoration: none;
+    }
+  }
+}

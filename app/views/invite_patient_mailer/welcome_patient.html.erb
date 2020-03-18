@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <div style="text-align:center;">
+      <img style="display:inline-block; max-width: 400px;" src="<%= attachments['email-logo.png'].url %>" alt="Starfield Health" />
+    </div>
+
+    <img style="display:inline-block; max-width: 400px;margin-top:40px" src="<%= attachments['email-head3.png'].url %>" alt="Starfield Health" />
+
+    <p style="color: #5e5957; font: 20px Arial;"><%= DateTime.now.strftime("%B %d, %Y") %></p>
+
+    <p style="color: #5e5957; font: 20px Arial;">Hello <%= patient.name %>!</p>
+
+    <p style="color: #5e5957; font: 20px Arial;">Welcome to Starfield Health! We couldn’t be happier
+    that you’re here.</p>
+
+    <p style="color: #5e5957; font: 20px Arial;">We really do believe that having the right team works
+    wonders and we all deserve great health.</p>
+
+    <p style="color: #5e5957; font: 20px Arial;">That’s why we’re so excited to bring you honest,
+    transparent, judgement free care.</p>
+
+    <img style="display:inline-block; width: 240px; margin-top:20px" src="<%= attachments['email-head4.png'].url %>" alt="Starfield Health" />
+    <p style="color: #5e5957; font: 20px Arial; margin-top:0px; padding-top:0px;">It’s the modern age. It’s your health and your data.
+    Own it.</p>
+
+    <img style="display:inline-block; width: 240px; margin-top:20px" src="<%= attachments['email-head5.png'].url %>" alt="Starfield Health" />
+    <p style="color: #5e5957; font: 20px Arial; margin-top:0px; padding-top:0px;">You need a plan that’s made for no one else but you.
+    Get your very own plan, delivered.</p>
+
+    <img style="display:inline-block; width: 240px; margin-top:15px" src="<%= attachments['email-head6.png'].url %>" alt="Starfield Health" />
+    <p style="color: #5e5957; font: 20px Arial; margin-top:0px; padding-top:0px;">As a digital health company, we are mobile-first.
+    Join the conversation anywhere! Starfield Health
+    moves with you, on your terms.</p>
+
+    <p style="color: #5e5957; font: 24px Arial; text-align:center; margin-top: 15px;">Need help or have questions?<br />
+    Send a message to <a href="mailto: info@starfield.health" style="text-decoration: none; color:#f8890b;">info@starfield.health</a></p>
+
+    <p style="color: #5e5957; font: 16px Arial; text-align:center;">Starfield Health, all rights reserved.<br />
+    1641 Capitol Way, Bismarck, ND 58501</p>
+  </body>
+</html>

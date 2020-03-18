@@ -1,0 +1,25 @@
+.coreTeam,
+.patient-container {
+  .container2 {
+    @include responsive-container-media-queries;
+    padding-left: 120px;
+    // margin-left: -18px;
+  }
+  .paper {
+    @include paper-default-lg;
+  }
+  .paperInner {
+    @include paper-inner-default-lg;
+  }
+
+  .MuiTableCell-root {
+    padding: 10px !important;
+    @media (max-width: 1450px) {
+      padding: 5px !important;
+    }
+  }
+}
+
+.provider-edit {
+  margin-top: 100px !important; //TODO consolidate these styles into universal layout styles that handle header spacing.  Can add padding to .main-content class and add that class to pages
+}

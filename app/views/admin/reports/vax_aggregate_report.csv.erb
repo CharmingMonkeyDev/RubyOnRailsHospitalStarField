@@ -1,0 +1,7 @@
+<% headers = @headers %>
+<%= CSV.generate_line headers -%>
+<%- @data.each do |datum| -%>
+    <%= CSV.generate_line(
+      @fields.map { |field|  datum[field]}
+    ) -%>
+<%-end-%>

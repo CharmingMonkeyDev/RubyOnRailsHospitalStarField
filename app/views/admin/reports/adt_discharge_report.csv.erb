@@ -1,0 +1,20 @@
+<% headers = [
+'Provider', #1
+'Customer', #2
+'Patient', #3
+'Patient Class', #4
+'Action Status', #5
+'ADT Event Data', #6
+] %>
+<%= CSV.generate_line headers -%>
+<%- @data[:adt_data].each do |datum| -%>
+    <%= CSV.generate_line([
+        sanitize_string(datum[:provider]), #1
+        sanitize_string(datum[:customer]), #2
+        sanitize_string(datum[:patient]), #3
+        sanitize_string(datum[:patient_class]), #4
+        sanitize_string(datum[:action_status]), #5
+        sanitize_string(datum[:event_date]), #6
+        ]) 
+    -%>
+<%-end-%>

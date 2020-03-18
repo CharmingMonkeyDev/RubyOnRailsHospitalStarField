@@ -1,0 +1,7 @@
+.patient-error-container {
+  @include modal-container;
+  @media (max-width: 600px) {
+    width: 50%;
+    text-align: center;
+  }
+}

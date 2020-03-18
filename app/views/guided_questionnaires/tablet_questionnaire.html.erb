@@ -1,0 +1,9 @@
+<% user = current_user || @patient %>
+
+<%= react_component("guided_questionnaires/TabletQuestionnaire", {
+    questionnaire_assignments: @selected_questionnaires,
+    csrfToken: form_authenticity_token,
+    user_id: user&.id,
+    logo_src: image_url('logo_starfield_health.svg'),
+    qrId: params[:id],
+}) %>

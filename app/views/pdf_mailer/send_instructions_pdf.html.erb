@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <div style="text-align:center;">
+      <img style="display:inline-block; max-width: 400px;" src="<%= attachments['email-logo.png'].url %>" alt="Starfield Health" />
+    </div>
+
+    <p style="color: #5e5957; font: 20px Arial;"><%= DateTime.now.strftime("%B %d, %Y") %></p>
+
+    <p style="color: #5e5957; font: 20px Arial;">Hello <%= user.name %>:</p>
+
+    <p style="color: #5e5957; font: 20px Arial;"> Your recent visit summary is attached.  </p>
+
+    <%= render partial: "layouts/need_help"%>
+
+  </body>
+</html>

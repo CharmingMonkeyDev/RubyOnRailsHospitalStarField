@@ -1,0 +1,27 @@
+.modal.patientlist {
+  .paper {
+    margin-top: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    .paperInner {
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+  }
+  .form-container .field-label {
+    font-size: 16px;
+    margin-top: 10px;
+  }
+  .orangeButton {
+    font-size: 16px;
+  }
+  .buttonRow {
+    margin-top: 5px;
+  }
+  .tableCell {
+    white-space: nowrap;
+  }
+  .secondary-label {
+    margin-left: 0px;
+  }
+}

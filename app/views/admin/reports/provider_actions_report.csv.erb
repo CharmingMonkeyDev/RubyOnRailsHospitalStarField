@@ -1,0 +1,22 @@
+<% headers = [
+'Provider', #1
+'Customer', #2
+'Patient', #3
+'Description', #4
+'Assign Date', #5
+'Status', #6
+'Complete Date', #7
+] %>
+<%= CSV.generate_line headers -%>
+<%- @data[:actions].each do |action| -%>
+    <%= CSV.generate_line([
+        sanitize_string(action[:provider].name_reversed), #1
+        sanitize_string(action[:customer]), #2
+        sanitize_string(action[:patient].name_reversed), #3
+        sanitize_string(action["subtext"]), #4
+        sanitize_string(action["assigned_at"]), #5
+        sanitize_string(action["status"]&.titleize), #6
+        sanitize_string(action["completed_at"]), #7
+        ]) 
+    -%>
+<%-end-%>
