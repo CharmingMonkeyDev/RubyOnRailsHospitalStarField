@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Starfield Health</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all' %>
+    <%= javascript_pack_tag 'application' %>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <%= favicon_link_tag %>
+  </head>
+
+  <body style="overflow-y: auto !important;">
+    <div id="error-messages">
+      <%= react_component 'FlashMessages', messages: flash_messages %>
+      <%= react_component 'FlashMessages', messages: other_errors %>
+    </div>
+    <%= yield %>
+  </body>
+</html>

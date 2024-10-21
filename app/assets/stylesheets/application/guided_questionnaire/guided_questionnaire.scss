@@ -1,0 +1,179 @@
+$guided-questionnaire-ratio: 1;
+$guided-questionnaire-ipad-pro-width: 1024px;
+$guided-questionnaire-ipad-air-width: 820px;
+$guided-questionnaire-ipad-mini-width: 768px;
+
+.guided-questionnaire-container {
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  width: $guided-questionnaire-ipad-pro-width;
+  min-height: 1440px;
+  padding-bottom: 100px;  
+  @media (max-width: 600px) {
+    width: 100%;
+  };
+  @media (max-width: $guided-questionnaire-ipad-air-width) {
+    width: $guided-questionnaire-ipad-air-width;
+  };
+  @media (max-width: $guided-questionnaire-ipad-mini-width) {
+    width: $guided-questionnaire-ipad-mini-width;
+  };
+  background: #FFFFFF;
+}
+
+.guided-questionnaire-container-inner {
+  width: $guided-questionnaire-ipad-pro-width !important;
+
+  @media (max-width: $guided-questionnaire-ipad-air-width) {
+    width: $guided-questionnaire-ipad-air-width !important;
+  };
+  @media (max-width: $guided-questionnaire-ipad-mini-width) {
+    width: $guided-questionnaire-ipad-mini-width !important;
+  };
+}
+
+.guided-questionnaire-header-container {
+  width: 100%;
+}
+
+.guided-questionnaire-logo-title-container {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  padding-top: 80px;
+  padding-bottom: 20px;
+}
+
+.guided-questionnaire-logo {
+  width: 310px;
+  height: 61px;
+}
+
+.guided-questionnaire-divider {
+  width: 100%;
+  height: 3px;
+  background: #ff890a;
+}
+
+.guided-questionnaire-content-container {
+  width: 100%;
+}
+
+.guided-questionnaire-content-description-container {
+  text-align: center;
+  padding-top: 24px;
+
+  @media screen and (max-width: $guided-questionnaire-ipad-air-width) {
+    $ratio: $guided-questionnaire-ipad-mini-width / $guided-questionnaire-ipad-pro-width;
+    padding-top: 24px * $ratio;
+  };
+
+  @media screen and (max-width: $guided-questionnaire-ipad-mini-width) {
+    $ratio: $guided-questionnaire-ipad-mini-width / $guided-questionnaire-ipad-pro-width;
+    padding-top: 24px * $ratio;
+  };
+}
+.guided-questionnaire-category-row-container {
+  display: flex;
+  // justify-content: space-between;
+  padding: 8px 8px;
+  gap: 16px;
+  @media (max-width: $guided-questionnaire-ipad-air-width) {
+    $ratio: $guided-questionnaire-ipad-air-width / $guided-questionnaire-ipad-pro-width;
+    padding: (8px * $ratio) (16px * $ratio);
+  };
+
+  @media (max-width: $guided-questionnaire-ipad-mini-width) {
+    $ratio: $guided-questionnaire-ipad-mini-width / $guided-questionnaire-ipad-pro-width;
+    padding: (8px * $ratio) (16px * $ratio);
+  };
+}
+
+.guided-questionnaire-category-item {
+  width: 50%;
+  height: 122px;
+  border: 1px solid #efe9e8;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  // margin: 0 8px;
+
+  @media (max-width: $guided-questionnaire-ipad-air-width) {
+    $ratio: $guided-questionnaire-ipad-air-width / $guided-questionnaire-ipad-pro-width;
+    width: 50%;
+    height: 122px * $ratio;
+    margin: 0 8px * $ratio;
+  };
+
+  @media (max-width: $guided-questionnaire-ipad-mini-width) {
+    $ratio: $guided-questionnaire-ipad-mini-width / $guided-questionnaire-ipad-pro-width;
+    width: 50%;
+    height: 122px * $ratio;
+    margin: 0 8px * $ratio;
+  };
+}
+
+.guided-questionnaire-content-description-text {
+  font: 20px QuicksandMedium;
+  font-weight: bold;
+  color: #1e1e1e;
+  margin: 0;
+}
+
+.guided-questionnaire-category-item-p {
+  margin: 0;
+  color: #4A4442;
+  font-weight: bold;
+  font: 21px QuicksandMedium;
+}
+
+.guided-questionnaire-category-item-text {
+  display: flex;
+  margin: 0;
+  color: #4A4442;
+  font-weight: bold;
+  font: 21px QuicksandMedium;
+}
+
+.guided-questionnaire-category-item-icon {
+  width: 56px;
+  height: 56px;
+  color: $input-grey;
+  
+  @media (max-width: $guided-questionnaire-ipad-air-width) {
+    $ratio: $guided-questionnaire-ipad-air-width / $guided-questionnaire-ipad-pro-width;
+    width: 56px * $ratio;
+    height: 56px * $ratio;
+  };
+
+  @media (max-width: $guided-questionnaire-ipad-mini-width) {
+    $ratio: $guided-questionnaire-ipad-mini-width / $guided-questionnaire-ipad-pro-width;
+    width: 56px * $ratio;
+    height: 56px * $ratio;
+  };
+}
+
+.guided-questionnaire-category-continue-btn {
+  width: 262px !important;
+  height: 42px;
+  border-radius: 4px !important;
+  // background-color: #ff890a !important;
+  // color: #FFFFFF !important;
+}
+
+.guided-questionnaire-category-item.selected {
+  background: #ff890a;
+  color: #FFFFFF;
+
+  img {
+    filter: brightness(0) invert(1);
+  }
+
+  span {
+    color: #FFFFFF;
+  }
+}

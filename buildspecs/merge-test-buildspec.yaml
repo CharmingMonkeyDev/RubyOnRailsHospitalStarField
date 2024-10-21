@@ -1,0 +1,35 @@
+version: 0.2
+phases:
+  install:
+    commands:
+      - echo "install phase started at $(date)"
+      - echo "Installing API Dependencies..."
+      - echo "Installing Ruby dependencies..."
+      - rm -rf vendor/cache
+      - bundle config set force_ruby_platform true
+      - bundle install
+      - echo "Client Dependencies..."
+      - echo "Node version..."
+      - node -v
+      - echo "Yarn version..."
+      - yarn -v
+      - echo "Installing JS dependencies..."
+      - yarn install
+  pre_build:
+    commands:
+      - echo "pre_build phase started at $(date)"
+      - env
+      # - echo Running migrations...
+      # - bundle exec rake db:migrate
+  build:
+    commands:
+      - echo "build phase started at $(date)"
+      # - echo Running tests...
+      # - bundle exec rspec spec
+      - echo "Building the app..."
+      - bundle config set cache_all true
+      - bundle package
+  post_build:
+    commands:
+      - echo "post_build phased started at $(date)"
+      - echo "Build completed at `date`"

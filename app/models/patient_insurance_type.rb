@@ -1,0 +1,3 @@
+class PatientInsuranceType < ApplicationRecord
+  
+end

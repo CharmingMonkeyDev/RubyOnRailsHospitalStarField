@@ -1,0 +1,21 @@
+FROM node:14-alpine as node-build
+
+RUN apk update --no-cache && \
+    tar --exclude docker-entrypoint.sh \
+    -czf /tmp/node-14.tar.gz \
+    /usr/local/bin \
+    /usr/local/lib \
+    /usr/local/include \
+    /opt/yarn-*
+
+FROM ruby:2.7.6-alpine
+
+COPY --from=node-build /tmp/node-14.tar.gz /tmp/node-14.tar.gz
+
+RUN apk update --no-cache && \
+    apk add --no-cache build-base libpq-dev zip git aws-cli && \
+    tar -C / -xzf /tmp/node-14.tar.gz && \
+    rm -f /tmp/node-14.tar.gz && \
+    gem update bundler && \
+    gem cleanup && \ 
+    rm -rf /var/lib/gems/*/cache/*

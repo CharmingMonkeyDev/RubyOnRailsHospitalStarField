@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="28.69" height="44.629" viewBox="0 0 28.69 44.629">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Rectangle_241" data-name="Rectangle 241" width="8.077" height="13.889" fill="#4a4442"/>
+    </clipPath>
+  </defs>
+  <g id="Group_1040" data-name="Group 1040" transform="translate(-5387.05 -19713.855)">
+    <g id="Device" transform="translate(5352.05 19364.855)">
+      <path id="Icon_ionic-md-phone-portrait" data-name="Icon ionic-md-phone-portrait" d="M32.466,2.25H11.974a4.09,4.09,0,0,0-4.1,4.057V42.821a4.09,4.09,0,0,0,4.1,4.057H32.466a4.09,4.09,0,0,0,4.1-4.057V6.307A4.09,4.09,0,0,0,32.466,2.25Zm.512,36.659H11.461V10.219H32.979Z" transform="translate(27.125 346.75)" fill="#4a4442"/>
+    </g>
+    <g id="Group_1039" data-name="Group 1039" transform="translate(5397.356 19729.225)">
+      <g id="Group_1037" data-name="Group 1037" transform="translate(0 0)" clip-path="url(#clip-path)">
+        <path id="Path_248" data-name="Path 248" d="M4.034,13.889A4.256,4.256,0,0,1,0,9.486,7.759,7.759,0,0,1,.2,7.744c0,.011-.007.049-.01.074a4.459,4.459,0,0,1,.226-.86L2.567.994A1.41,1.41,0,0,1,3.815,0,1.35,1.35,0,0,1,5.108.917L7.388,6.429c.017.041.031.083.045.125l.2.61a6.867,6.867,0,0,1,.443,2.059c0,2.574-1.813,4.668-4.043,4.668" transform="translate(0 0)" fill="#4a4442"/>
+      </g>
+    </g>
+  </g>
+</svg>

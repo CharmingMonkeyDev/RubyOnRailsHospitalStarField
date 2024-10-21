@@ -1,0 +1,696 @@
+.links {
+  color: orange;
+}
+
+.patient-report-container {
+  .MuiInput-underline:hover:not(.Mui-disabled):before {
+    border-bottom: 2px solid orange;
+  }
+
+  .Mui-focused.MuiInput-underline:hover:not(.Mui-disabled):before {
+    border-bottom: 2px solid orange;
+  }
+
+  .container3 {
+    padding-left: 120px;
+    margin-left: -18px;
+    margin-bottom: 10px;
+
+    // Setting to 1024 so the padding make sense when we lose the sidebar nav
+    @media (max-width: 1024px) {
+      margin-right: 0;
+      margin-left: 0;
+      padding-left: 0;
+    }
+
+    .report-navigation-container {
+      font-family: $font-qs-bold;
+      margin-left: auto;
+      margin-top: 0px;
+
+      @media (max-width: 1024px) {
+        margin-right: 10px;
+        margin-left: 10px;
+        margin-bottom: 10px;
+        padding-left: 0;
+      }
+
+      .patient-nav-link {
+        font-size: 4px;
+        color: $color-dark-grey-text;
+        padding: 10px;
+        text-decoration: none;
+        box-sizing: border-box;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 1;
+        
+        .back-arrow {
+          display: inline;
+          vertical-align: middle;
+        }
+      }
+
+
+      .report-nav-link {
+        font-size: 4px;
+        color: $color-dark-grey-text;
+        padding: 10px;
+        text-decoration: none;
+        
+        .back-arrow {
+          display: inline;
+          vertical-align: middle;
+        }
+      }
+
+      .back-link-container {
+        background: #ffffff 0% 0% no-repeat padding-box;
+        box-shadow: 0px 3px 6px #00000029;
+        border-radius: 5px;
+        opacity: 1;
+        text-align: center;
+        margin-bottom: 10px;
+
+        .report-nav-link {
+          display: inline-block;
+          width: 100%;
+          padding: 0;
+          padding-top: 10px;
+          padding-bottom: 10px;
+        }
+      }
+
+      .patient-nav-link.active {
+        color: white;
+      }
+      .report-nav-link.active {
+        color: white;
+      }
+
+      .overview-tab {
+        display: inline-block;
+      }
+
+      .first-link {
+        border-bottom-left-radius: 2px;
+        border-top-left-radius: 2px;
+      }
+
+      .report-normal-link {
+        max-width: 300px;
+        opacity: 1;
+        text-align: center;
+        height: 85px;
+        display: "flex";
+        align-items: "center";
+        &:not(:last-child) {
+          border-right: 1px solid $color-primary-orange;
+        }
+        &:last-child {
+          border-top-right-radius: 2px;
+          border-bottom-right-radius: 2px;
+        }
+        .header {
+          font-family: $font-qs-medium !important;
+          padding: 0 !important;
+        }
+
+        .data {
+          margin-top: 5px;
+          font-size: 14px;
+        }
+
+        .unit {
+          font-size: 9px;
+          margin-top: 2px;
+          opacity: 0.5;
+        }
+
+        .cgm-label {
+          display: inline-block;
+          margin-top: 2px;
+        }
+      }
+
+      .report-active-link {
+        box-shadow: 0px 5px 5px #00000029 inset;
+        background: $color-primary-orange 0% 0% no-repeat padding-box;
+      }
+
+      .report-inactive-link {
+        background: #ffffff 0% 0% no-repeat padding-box;
+      }
+
+      .report-disabled-link {
+        background: $color-grey-text 0% 0% no-repeat padding-box;
+      }
+    }
+  }
+}
+
+.patient-overview-report {
+  margin-top: -45px !important;
+}
+
+.cgm-report-container {
+  margin-left: 20px;
+
+  @media (max-width: 600px) {
+    margin-left: 0;
+  }
+
+  button.MuiIconButton-root {
+    @media (max-width: 600px) {
+      padding: 0;
+    }
+  }
+
+  .mobile-date-filter {
+    display: flex;
+  }
+
+  .patient-info-container {
+    background: #ffffff 0% 0% no-repeat padding-box;
+    box-shadow: 0px 10px 20px #00000029;
+    border-radius: 5px;
+    opacity: 1;
+    // padding-bottom: 10px;
+
+    .first-column {
+      padding-left: 30px;
+    }
+
+    .info-column {
+      .header {
+        padding: 0 0 10px 0;
+        font-family: $font-qs-bold;
+        font-size: 21px;
+        margin-top: 10px;
+      }
+
+      .data-point {
+        padding: 5px 0 5px 0;
+        font-family: "QuicksandLight";
+        font-size: 14px;
+      }
+
+      .user-type-icon {
+        vertical-align: middle;
+        display: inline-block;
+        margin-right: 10px;
+        border: 2px solid $color-dark-grey-text;
+        border-radius: 50%;
+      }
+
+      .app-user-icon {
+        color: $status-green;
+      }
+
+      .non-app-user-icon {
+        color: red;
+      }
+
+      .action-group-container {
+        max-width: 300px;
+      }
+      .action-icon {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        cursor: pointer;
+        height: 50px;
+        justify-content: center;
+        text-align: center;
+        color: $color-dark-grey-text;
+        margin-top: 15px;
+        &-disabled {
+          @extend .action-icon;
+          opacity: 0.5;
+          cursor: not-allowed;
+        }
+
+        .action-icon-image {
+          display: inline-block;
+          margin-bottom: 8px;
+          width: 35px;
+          @media (max-width: 1400px) {
+            width: 25px;
+            margin-bottom: 3px;
+          }
+        }
+        p {
+          margin: 0;
+          padding: 0;
+          font-family: $font-qs-medium;
+          font-size: 9px;
+          color: #a29d9b;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+
+  .patient-data-container {
+    background: #ffffff 0% 0% no-repeat padding-box;
+    box-shadow: 0px 10px 20px #00000029;
+    border-radius: 5px;
+    opacity: 1;
+    padding: 20px;
+  }
+
+  .main-report-container {
+    margin-top: 10px;
+
+    .overview-report-container {
+      background: #ffffff 0% 0% no-repeat padding-box;
+      border-radius: 5px;
+      opacity: 1;
+
+      .overview-header-container {
+        padding: 10px 0 10px 0;
+        padding-left: 5%;
+        padding-right: 5%;
+        .overview-header {
+          font-family: $font-qs-bold;
+          font-size: 24px;
+        }
+
+        .header-date {
+          font-family: "QuicksandLight";
+          font-size: 16px;
+          .edit {
+            font-size: 20;
+            color: "#c1b7b3";
+            display: "inline-block";
+            cursor: "pointer";
+            @media (max-width: 600px) {
+              display: none;
+            }
+          }
+          .date-mover {
+            font-size: 26px;
+            font-weight: bold;
+          }
+        }
+
+        .filter-container {
+          margin-top: 15px;
+          margin-bottom: 20px;
+
+          .single-container.active {
+            background-color: $primary-orange;
+            border-radius: 5px;
+            color: white;
+          }
+          @media (max-width: 600px) {
+            margin-bottom: 0 !important;
+            margin-top: 0;
+          }
+          .MuiGrid-root {
+            text-align: center;
+          }
+          .filter-header {
+            font-size: 14px;
+            padding: 5px 0 10px 0;
+            // @media (max-width: 600px) {
+            //   display:none;
+            // }
+            padding-left: 10px;
+            text-align: left;
+          }
+
+          .links {
+            display: inline-block;
+            color: black;
+            cursor: pointer;
+            padding: 10px 30px;
+          }
+          .links.active {
+            color: white;
+          }
+          .active-container {
+            background-color: $primary-orange;
+            border-radius: 30px;
+            a {
+              color: white !important;
+            }
+          }
+
+          .line-breaker {
+            border: 1px solid $font-grey;
+          }
+
+          .custom-date-container {
+            border: 4px solid $subtle-grey;
+            border-radius: 5px;
+            .header {
+              background-color: $subtle-grey;
+              border-radius: 3px;
+              padding: 10px;
+              text-align: center;
+            }
+            .custom-date {
+              margin: 10px 5px 10px 5px;
+            }
+          }
+
+          .button-container {
+            margin-top: 10px;
+            text-align: center;
+            .cancel-link-container {
+              .cancel-link {
+                display: inline-block;
+                padding: 10px;
+                color: black;
+              }
+            }
+            .save-btn-container {
+              // this padding is to account for the diff in width with the date containers
+              padding-right: 20px;
+              .save-btn {
+                display: inline-block;
+                width: 100%;
+                background-color: $primary-orange;
+                border-radius: 5px;
+                padding: 10px;
+                color: white;
+                cursor: pointer;
+              }
+            }
+          }
+        }
+      }
+
+      .glucose-variability-container {
+        margin-top: 10px;
+      }
+
+      .graph-container {
+        margin-top: 10px;
+
+        .content-container {
+          @media (max-width: "600px") {
+            display: none;
+          }
+        }
+
+        .mobile-content-container {
+          display: none;
+          @media (max-width: "600px") {
+            display: block;
+          }
+
+          .overview-header-container {
+            padding: 0px;
+          }
+
+          .label-container {
+            padding: 0;
+            .label-row {
+              padding: 0;
+              max-width: 20%;
+              flex-basis: 20%;
+              border-right: 2px solid $subtle-grey;
+              border-bottom: none;
+              .legend-header {
+                font-size: 6px;
+              }
+            }
+          }
+
+          .chart-container {
+            padding-left: 20px;
+            padding-right: 20px;
+            canvas {
+              height: 60px !important;
+            }
+          }
+        }
+
+        .label-container {
+          padding: 10px;
+          text-align: center;
+
+          .label-row {
+            padding: 10px;
+            border-bottom: 2px solid $subtle-grey;
+
+            .legend-header {
+              font-size: 10px;
+              margin: 5px;
+              color: $color-dark-grey-text;
+            }
+
+            .the-dot {
+              height: 10px;
+              width: 10px;
+              margin: auto;
+              border-radius: 50%;
+            }
+
+            .bench-data {
+              font-size: 8px;
+              margin: 5px;
+              color: $color-dark-grey-text;
+            }
+          }
+        }
+
+        .chart-container {
+          padding-top: 5px;
+          padding-bottom: 5px;
+        }
+      }
+
+      .small-widget {
+        min-height: 121px;
+      }
+
+      .info-widget {
+        border: 2px solid $primary-orange;
+        border-radius: 5px;
+        opacity: 1;
+        height: 100%;
+
+        .header-container {
+          text-align: center;
+          letter-spacing: 0px;
+          color: #ffffff;
+          opacity: 1;
+          background: $primary-orange 0% 0% no-repeat padding-box;
+          border-radius: 2px;
+          font-size: 12px;
+          padding: 5px 0 5px 0;
+          @media (max-width: 600px) {
+            font-size: 10px;
+          }
+        }
+
+        .body-container {
+          padding: 5px;
+        }
+
+        .vertical-line {
+          border-left: 2px solid $subtle-grey;
+        }
+
+        .label {
+          text-align: center;
+          font-size: 12px;
+          padding-top: 5px;
+          margin-bottom: 3px;
+        }
+
+        .data-value {
+          text-align: center;
+          font-size: 30px;
+          font-weight: bold;
+          padding: 5px;
+        }
+
+        .data-value-small {
+          text-align: center;
+          font-size: 20px;
+          font-weight: bold;
+          padding: 5px;
+        }
+      }
+    }
+
+    .ambulatory-report-container {
+      border-radius: 5px;
+      opacity: 1;
+      @media (max-width: 600px) {
+        padding-left: 30px;
+      }
+      .tabs-container {
+        .tabs-header-container {
+          margin-bottom: 0px;
+        }
+      }
+      .graph-container {
+        font-family: $font-qs-medium;
+        .info-widget {
+          .ambu-header {
+            font-size: 20px;
+            text-align: center;
+          }
+
+          .custom-date {
+            margin-top: 0px;
+            margin-bottom: 0px;
+          }
+          .trend-button {
+            background-color: $primary-orange;
+            padding: 10px;
+            border-radius: 25px;
+            color: white;
+            padding-right: 20px;
+            padding-left: 20px;
+          }
+          .link {
+            color: $font-grey;
+            cursor: pointer;
+          }
+
+          .legend-container {
+            font-size: 10px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            .legend-line {
+              display: inline-block;
+              height: 2px;
+              width: 15px;
+              vertical-align: middle;
+            }
+            .legend-line.target-range {
+              border-top: 2px solid green;
+              border-bottom: 2px solid green;
+              height: 10px;
+            }
+            .legend-dot {
+              display: inline-block;
+              height: 15px;
+              width: 15px;
+              border-radius: 50%;
+              vertical-align: middle;
+            }
+            .sunday {
+              background-color: #ff00f5;
+            }
+
+            .monday {
+              background-color: #ff0000;
+            }
+
+            .tuesday {
+              background-color: #ff890a;
+            }
+
+            .wednesday {
+              background-color: #ebb708;
+            }
+
+            .thursday {
+              background-color: #07bc6f;
+            }
+
+            .friday {
+              background-color: #007fff;
+            }
+
+            .saturday {
+              background-color: #9300ff;
+            }
+          }
+
+          .chart-container {
+            .weekly-header {
+              padding-top: 10px;
+              padding-bottom: 10px;
+            }
+
+            .vertical-thing {
+              color: $primary-orange;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// Patient's view
+.patient-main-container {
+  left: 0;
+  right: 0;
+  max-width: 500px;
+  margin-top: 90px;
+  margin-left: auto;
+  margin-right: auto;
+  .ambulatory-report-container {
+    padding-left: 30px;
+    padding-right: 30px;
+    .tabs-link {
+      min-width: 100px;
+      @media (max-width: 600px) {
+        margin-right: 7px;
+        &:last-child {
+          margin-left: 1px;
+        }
+      }
+    }
+    .trend-container {
+      text-align: right;
+    }
+    .MuiBox-root-169 {
+      @media (max-width: 600px) {
+        padding: 24px 5px;
+      }
+    }
+  }
+}
+
+// Use BEM convention to edit!!!!
+.legend-circle {
+  display: inline-block;
+  height: 20px;
+  width: 20px;
+  position: relative;
+  top: 7px;
+  border-radius: 50%;
+  margin-left: 10px;
+  border: 1px solid $color-primary-orange;
+}
+
+.legend-label {
+  font-size: 11px;
+}
+
+.circle-legend {
+  .high {
+    background-color: #fdf8e9;
+  }
+  .target {
+    background-color: #dcdcdc;
+  }
+  .low {
+    background-color: #ffe9ea;
+  }
+}
+
+.side-arrow {
+  height: 85px;
+  background-color: $color-primary-orange;
+  align-items: center;
+  color: white !important;
+  width: 25px;
+  display: flex;
+}

@@ -1,0 +1,23 @@
+.pagerLinks {
+  text-align: center;
+  a {
+    cursor: pointer;
+    text-align: center;
+    padding: 5px;
+    font-size: 18px;
+    font-family: $font-qs-medium;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  svg {
+    vertical-align: bottom;
+  }
+}
+.linkDark {
+  color: $color-dark-grey-text !important;
+}
+.linkLight {
+  color: #c1b7b3 !important;
+}

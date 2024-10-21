@@ -1,0 +1,36 @@
+$guided-questionnaire-ratio: 1;
+$guided-questionnaire-ipad-pro-width: 1024px;
+$guided-questionnaire-ipad-air-width: 820px;
+$guided-questionnaire-ipad-mini-width: 768px;
+
+.guided-questionnaire-show-categories-category {
+  text-align: center;
+  padding: 28px 0px;
+
+  @media screen and (max-width: $guided-questionnaire-ipad-air-width) {
+    $ratio: $guided-questionnaire-ipad-mini-width / $guided-questionnaire-ipad-pro-width;
+    padding: (28px * $ratio) 0px;
+  };
+
+  @media screen and (max-width: $guided-questionnaire-ipad-mini-width) {
+    $ratio: $guided-questionnaire-ipad-mini-width / $guided-questionnaire-ipad-pro-width;
+    padding: (28px * $ratio) 0px ;
+  };
+}
+
+.guided-questionnaire-category-back-btn {
+  width: 262px;
+  height: 42px;
+  border-radius: 4px !important;
+  background-color: none;
+  color: #1E1E1E !important;
+}
+
+.guided-questionnaire-show-categories-row-container {
+  text-align: center;
+  padding-top: 28px;
+
+  button {
+    margin: 0 12px;
+  }
+}

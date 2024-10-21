@@ -1,0 +1,73 @@
+.note-form-container {
+  .wrapper {
+    padding: 25px;
+    .btn-container {
+      text-align: right;
+      .menuLink {
+        display: inline-block;
+      }
+    }
+
+    .sub-header {
+      font-family: $font-qs-medium;
+    }
+
+    .field-label {
+      margin-bottom: 10px;
+      margin-top: 20px;
+    }
+
+    .field-container {
+      .the-field {
+        width: 500px;
+        background-color: $background-grey;
+        border-radius: 5px;
+
+        fieldset {
+          border: none;
+          outline: none;
+        }
+      }
+    }
+
+    .action-link {
+      margin-top: 12px;
+      color: black;
+      cursor: pointer;
+      font-family: $font-qs-bold;
+      text-decoration: none;
+      color: $color-grey-text;
+
+      .plus-icon {
+        border: 2px solid $color-grey-text;
+        color: $color-primary-orange;
+        vertical-align: middle;
+        border-radius: 50%;
+      }
+    }
+
+    .save-btn-container {
+      text-align: center;
+    }
+  }
+}
+
+.template-list-container {
+  .template-card {
+    padding: 10px;
+    box-shadow: 0px 3px 6px #00000029;
+    border-radius: 5px;
+    margin-top: 10px;
+  }
+}
+
+.template-container {
+  max-height: 550px;
+  overflow-y: scroll;
+
+  .cancel-link {
+    display: inline-block;
+    margin-top: 10px;
+    text-decoration: underline;
+  }
+}

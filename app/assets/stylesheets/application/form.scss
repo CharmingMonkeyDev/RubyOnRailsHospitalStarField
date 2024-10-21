@@ -1,0 +1,39 @@
+.form-label-container {
+  margin-top: 10px;
+  font-family: $font-qs-medium;
+}
+
+.form-label-container--not-first {
+  margin-top: 20px;
+}
+
+.textinput-container {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.textinput__field {
+  width: 100%;
+  border-radius: 4px;
+  background-color: $background-grey;
+
+  fieldset {
+    border: none;
+  }
+}
+
+.password-restriction-content {
+  font-size: 14px;
+  color: #707070;
+  font-family: $font-qs-medium;
+}
+
+.loginText {
+  color: #939393;
+  display: inline-block;
+  margin-top: 15;
+  font-family: $font-qs-medium;
+}
+
+label#search-builder-label {
+  padding-left: 25px;
+}

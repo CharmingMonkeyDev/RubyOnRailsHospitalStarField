@@ -1,0 +1,33 @@
+// Font colors
+$color-dark-grey-text: #4a4442;
+$color-grey-text: #a29d9b;
+$dark-grey-font-color: #1e1e1e;
+
+// Design element colors
+$color-primary-orange: #ff890a;
+$background-grey: #e5e0de;
+// $main-background-grey: #b0b0b0;
+$main-background-grey: #888888;
+
+$subtle-grey: #efe9e7;
+$border-orange: 2px solid $color-primary-orange;
+$status-green: #07bc2a;
+$light-purple: rgba(63, 81, 181, 0.25);
+$light-pink: #FFBFBF;
+$red: #F00;
+$subtle-orange: #FFF0DF;
+
+// Font stacks
+$font-qs-bold: "QuicksandBold", sans-serif;
+$font-qs-medium: "QuicksandMedium", sans-serif;
+$font-qs-regular: "QuicksandRegular", sans-serif;
+$font-qs-light: "QuicksandLight", sans-serif;
+
+// Previously used variable names, leaving for backward compatibiliity
+$font-grey: $color-grey-text;
+$primary-orange: $color-primary-orange;
+$report-black: $color-dark-grey-text;
+
+// form elements
+$input-grey: #fcf6f4;
+$panel-grey: #efe9e7;

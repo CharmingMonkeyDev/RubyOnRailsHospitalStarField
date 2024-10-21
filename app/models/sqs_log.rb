@@ -1,0 +1,2 @@
+class SqsLog < ApplicationRecord
+end

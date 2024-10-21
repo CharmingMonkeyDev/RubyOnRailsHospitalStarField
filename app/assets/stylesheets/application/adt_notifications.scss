@@ -1,0 +1,20 @@
+.notification-container {
+  .notif-table {
+    border-collapse: collapse;
+    width: 100%;
+    background-color: white;
+    .notif-header {
+      text-align: left;
+      padding: 15px;
+    }
+
+    .notif-data-row {
+      border-bottom: 1px solid black;
+
+      .notif-data {
+        font-size: 14px;
+        padding: 10px;
+      }
+    }
+  }
+}

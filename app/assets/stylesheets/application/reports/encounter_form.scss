@@ -1,0 +1,327 @@
+.form-panel {
+  .logs-panel {
+    .logs-container {
+      text-align: center;
+      color: white;
+      .MuiSvgIcon-root {
+        color: white;
+      }
+      .close-icon {
+        color: $primary-orange;
+      }
+
+      .icon-position {
+        display: inline-block;
+        position: relative;
+        top: 5px;
+        margin-left: 10px;
+      }
+    }
+  }
+
+  .single-panel {
+    background-color: white;
+    margin-top: 15px;
+    border-radius: 5px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+    .admin-header {
+      font-size: 16px;
+      font-family: $font-qs-medium;
+      padding-left: 30px;
+      padding-right: 20px;
+      display: flex;
+      align-items: center;
+    }
+
+    .form-body {
+      padding-left: 28px;
+      padding-right: 25px;
+
+      .field-container {
+        margin: 5px 20px 5px 0;
+        // margin-bottom: 5px;
+        // margin-right: 20px;
+        .field-1 {
+          width: 80%;
+          input {
+            padding: 10.5px 14px;
+          }
+        }
+        .field-2 {
+          width: 100%;
+          font-family: $font-qs-medium;
+        }
+        .fixed-width {
+          max-width: 340px;
+        }
+        .field {
+          background-color: #efe9e7;
+          border-radius: 5px;
+          padding-left: 5px;
+
+          fieldset {
+            border: none;
+            outline: none;
+          }
+        }
+      }
+
+      .field-label-1 {
+        margin-top: 10px;
+      }
+    }
+    .button-container {
+      margin-top: 10px;
+      text-align: center;
+      .cancel-link-container {
+        .cancel-link {
+          display: inline-block;
+          padding: 10px;
+          color: black;
+          cursor: pointer;
+        }
+      }
+      .save-btn-container {
+        padding-right: 20px;
+        .save-btn {
+          display: inline-block;
+          width: 160px;
+          background-color: $primary-orange;
+          border-radius: 5px;
+          padding: 10px;
+          color: white;
+          cursor: pointer;
+        }
+      }
+    }
+    .action-container {
+      margin-left: 23px;
+      margin-top: 20px;
+      .app-user-text {
+        font-size: 18px;
+        color: black;
+        font-weight: bold;
+        text-decoration: none;
+      }
+
+      .app-user-text:hover {
+        text-decoration: none;
+        cursor: pointer;
+      }
+
+      .plus-icon {
+        border: 2px solid $color-grey-text;
+        color: $color-primary-orange;
+        vertical-align: middle;
+        border-radius: 50%;
+      }
+    }
+    .right-action-container {
+      text-align: right;
+      padding-right: 40px;
+    }
+    @media (max-width: "1536px") {
+      font-size: 0.8rem;
+      .MuiFormLabel-root {
+        font-size: 0.8rem;
+      }
+    }
+  }
+
+  .action-container {
+    margin-top: 10px;
+
+    .button-container {
+      text-align: center;
+      .btn {
+        display: inline-block;
+        width: 220px;
+        text-align: center;
+        border-radius: 5px;
+        padding: 10px;
+        margin-left: 10px;
+        margin-right: 10px;
+        cursor: pointer;
+      }
+
+      .pend-btn,
+      .sign-btn {
+        background-color: white;
+        color: black;
+      }
+
+      .send-charges-btn {
+        background-color: $color-dark-grey-text;
+        color: white;
+      }
+    }
+
+    .trash-container {
+      text-align: right;
+    }
+  }
+  textarea {
+    width: 100%;
+  }
+}
+.table-header-box {
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.6);
+  z-index: 1000;
+  background: white;
+  padding: 4px !important;
+}
+.encounter-panel {
+  .MuiBox-root{
+    padding: 0 !important;
+  }
+}
+
+.encounter-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9em;
+  
+  th {
+    text-align: left;
+    padding: 20px !important;
+  }
+
+  th,
+  td {
+    padding: 0px 10px;
+    @media (max-width: 1536px) {
+      font-size: 12px;
+    }
+  }
+
+  tbody {
+    tr {
+      border-bottom: 1px solid black;
+      td {
+        padding-top: 8px;
+        padding-bottom: 8px;
+      }
+
+      .pencil {
+        color: gray !important;
+      }
+    }
+  }
+
+  .time-td {
+    display: inline-block;
+    width: 100%;
+  }
+
+  .date-data {
+    display: inline-block;
+    width: 150px;
+  }
+}
+
+.template-card {
+  font-size: 0.9rem;
+}
+.template-card:hover {
+  background-color: $primary-orange;
+  color: white;
+}
+
+.paper.template-select-container {
+  width: 500px;
+  margin-bottom: 15px;
+  max-height: 95%;
+}
+
+.template-select-inner {
+  max-height: 65vh;
+  overflow-y: scroll;
+}
+
+.template-select-container a:hover {
+  text-decoration: none;
+}
+
+.template-select-container a.active .template-card {
+  background-color: $primary-orange;
+  color: white;
+}
+
+.template-select-modal-container {
+  display: grid;
+  align-content: center;
+
+  .confirm-btn-container {
+    .confirm-btn {
+      width: 150px;
+    }
+  }
+}
+
+.note-field {
+  width: 100%;
+}
+
+.note-field .ql-container {
+  height: auto;
+  min-height: 125px;
+}
+
+.notes-container {
+  margin-bottom: 20px;
+}
+
+.codes-label-container {
+  position: relative;
+}
+
+.previous-codes-container {
+  position: absolute;
+  right: -160px;
+  top: -40px;
+  z-index: 100;
+  background: #ffffff 0% 0% no-repeat padding-box;
+  box-shadow: 0px 3px 6px #00000029;
+  border-radius: 5px;
+  opacity: 1;
+  padding: 10px;
+  max-height: 200px;
+  overflow-y: scroll;
+}
+
+.diag-codes {
+  max-width: 200px;
+  right: -210px;
+}
+
+.float-label {
+  display: block;
+  float: left;
+}
+
+.pcc__item {
+  padding: 10px;
+  .pcc__item__link {
+    color: black;
+  }
+}
+
+.prev-code-label {
+  font-size: 14px;
+  display: block;
+  float: right;
+  margin-right: 14px;
+}
+
+.prev-code-label:hover {
+  text-decoration: underline;
+}
+
+.generate-pdf {
+  margin-left: 23px !important;
+  height: auto !important;
+  width: max-content !important;
+  padding: 10px !important;
+}

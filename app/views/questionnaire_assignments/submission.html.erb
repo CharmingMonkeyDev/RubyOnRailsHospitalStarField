@@ -1,0 +1,6 @@
+<%= react_component("questionnaire_submission/QuestionnaireSubmission", {
+    QuestionnaireAssignment: @questionnaire_assignment,
+    csrfToken: form_authenticity_token,
+    user_id: @questionnaire_assignment.assignment_type == "manual" ? current_user.id : nil,
+    redirect: @redirect
+}) %>

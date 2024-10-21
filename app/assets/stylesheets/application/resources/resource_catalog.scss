@@ -1,0 +1,133 @@
+.add-resource-modal {
+  .container {
+    @include modal-container;
+  }
+  .pageTitle {
+    text-align: center;
+    span {
+      font-size: 26px;
+      font-family: $font-qs-medium;
+    }
+  }
+  .backButton {
+    @include button-back;
+  }
+  .pageHeading {
+    @include page-heading;
+  }
+  .centerText {
+    text-align: center;
+  }
+  .infoSection {
+    @include info-section;
+  }
+  .nextButton {
+    @include button-next;
+  }
+  .textInput {
+    @include input-base(100%);
+    margin-top: 10px;
+  }
+  .centerButton {
+    text-align: center;
+    margin-top: 10px;
+  }
+  .clearButtonStyling {
+    @include button-clear;
+  }
+  .alert {
+    border: 1px solid #dbe3e6;
+  }
+  .paper {
+    @include paper-default-md;
+  }
+  .paperInner {
+    @include paper-inner-default-md;
+  }
+  .inviteHeader {
+    font-size: 20px;
+    font-family: $font-qs-medium;
+    margin-bottom: 20px;
+    text-align: left;
+  }
+  .imageUpload {
+    border: 1px solid #e7e7e7;
+    padding: 14px;
+  }
+}
+
+.resource-catalog {
+  .container {
+    @include responsive-container-media-queries;
+    padding-left: 120px;
+    //margin-left: -18px;
+  }
+  .gridHeader {
+    color: #313133;
+    font-size: 21px;
+    font-family: $font-qs-medium;
+    margin: 0;
+  }
+  .addLink {
+    text-align: right;
+    padding-right: 15px;
+    margin-top: 15px;
+    @media (max-width: 946px) {
+      text-align: left;
+    }
+  }
+  .adminHeader {
+    font-size: 18px;
+    font-family: $font-qs-medium;
+    padding-left: 15px;
+  }
+  .divider {
+    border: 1px solid $color-primary-orange;
+  }
+  .careSection {
+    border-right: 2px solid #817d7b;
+  }
+  .careHeader {
+    font-size: 18px;
+    font-family: $font-qs-medium;
+    margin-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 15px;
+    border-bottom: 1px solid #817d7b;
+  }
+  .categoryMenu {
+    margin-left: 10px;
+    background-color: #f8890b;
+    color: #ffffff;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    display: inline-block;
+    padding: 3;
+    padding-left: 15;
+    padding-right: 15;
+    border-radius: 4;
+    font-size: 14px;
+    font-family: $font-qs-medium;
+  }
+  .table {
+    width: 100%;
+  }
+  .row {
+    background-color: #efe9e7;
+  }
+  .alert {
+    border: 1px solid #dbe3e6;
+  }
+  .hidden {
+    display: none;
+  }
+  .nextButton {
+    @include button-next;
+  }
+  .trackLink {
+    float: right;
+    margin-right: 15px;
+    margin-bottom: 5px;
+    cursor: pointer;
+  }
+}

@@ -1,0 +1,290 @@
+.care-plan-management {
+  .container {
+    @include responsive-container-media-queries;
+    padding-left: 120px;
+  }
+ 
+  .gridHeader {
+    color: #313133;
+    font-size: 21px;
+    font-family: $font-qs-medium;
+    margin: 0;
+  }
+  .addLink {
+    text-align: right;
+    padding-right: 40px;
+    margin-top: 15px;
+    @media (max-width: 946px) {
+      text-align: left;
+    }
+  }
+  .adminHeader {
+    font-size: 18px;
+    font-family: $font-qs-medium;
+    border-bottom: 2px solid $color-primary-orange;
+    padding-left: 15px;
+  }
+  .careSection {
+    border-right: 2px solid #817d7b;
+  }
+  .careHeader {
+    font-size: 18px;
+    font-family: $font-qs-medium;
+    margin-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 15px;
+    border-bottom: 1px solid #817d7b;
+  }
+  .categoryMenu {
+    margin-left: 10px;
+    background-color: #f8890b;
+    color: #ffffff;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    display: inline-block;
+    padding: 3px;
+    padding-left: 15px;
+    padding-right: 15px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-family: $font-qs-medium;
+  }
+  .typeLinkOn {
+    margin-left: 10px;
+    background-color: #f8890b;
+    color: #ffffff;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    display: inline-block;
+    padding: 3px;
+    padding-left: 15px;
+    padding-right: 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    font-family: $font-qs-medium;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+  .weekName {
+    margin-left: 10px;
+    background-color: none;
+    color: #4a4442;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    display: inline-block;
+    padding: 3px;
+    padding-left: 15px;
+    padding-right: 15px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-family: $font-qs-medium;
+  }
+  .typeLinkOff {
+    margin-left: 10px;
+    background-color: none;
+    color: #a29d9b;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    display: inline-block;
+    padding: 3px;
+    padding-left: 15px;
+    padding-right: 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    font-family: $font-qs-medium;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+  .table {
+    width: 100%;
+  }
+  .row {
+    background-color: #efe9e7;
+  }
+  .alert {
+    border: 1px solid #dbe3e6;
+  }
+  .hidden {
+    display: none;
+  }
+  .pathwayWeekAction {
+    margin-left: 50px;
+    font-size: 12px;
+  }
+  .pageTitle {
+    text-align: center;
+    span {
+      font-size: 26px;
+      font-family: $font-qs-medium;
+    }
+  }
+  .backButton {
+    @include button-back;
+  }
+  .pageHeading {
+    @include page-heading;
+  }
+  .centerText {
+    text-align: center;
+  }
+  .infoSection {
+    @include info-section;
+  }
+  .nextButton {
+    @include button-next;
+  }
+  .clearButtonStyling {
+    @include button-clear;
+  }
+  .textInput {
+    @include input-base(100%);
+    margin-top: 10px;
+  }
+  .centerButton {
+    text-align: center;
+    margin-top: 10px;
+  }
+  .paper {
+    @include paper-default-md;
+  }
+  .paperInner {
+    // If the padding on this gets weird at some point, the old class
+    // didn't include the 0 padding that the mixin has.
+    @include paper-inner-default-md;
+  }
+  .inviteHeader {
+    font-size: 16px;
+    font-family: $font-qs-medium;
+    margin-bottom: 0;
+    text-align: left;
+  }
+  .weeksLabel {
+    font-size: 14px;
+    font-family: $font-qs-medium;
+  }
+  .fontQuicksandMedium22 {
+    font-size: 22px;
+    font-family: $font-qs-medium;
+  }
+  .fontQuicksandMedium30 {
+    font-size: 30px;
+    font-family: $font-qs-medium;
+  }
+  .cursorPointer {
+    cursor: pointer;
+  }
+  .colorBlack {
+    color: #000000;
+  }
+  .textDecorationHoverNone {
+    &:hover {
+      text-decoration: none;
+    }
+  }
+  .textAlignCenter {
+    text-align: center;
+  }
+  .patientLink {
+    display: block;
+    margin-top: 20px;
+    color: #ff8806;
+    font-size: 16px;
+    font-family: $font-qs-medium;
+    text-align: center;
+    font-weight: bold;
+  }
+  .carePlanPatientDetails {
+    font-size: 16px;
+    font-family: $font-qs-medium;
+    margin-top: 20px;
+    margin-left: 20px;
+    strong {
+      display: inline-block;
+      margin-right: 10px;
+    }
+    span {
+      display: inline-block;
+    }
+  }
+  .assignedActionsWrapper {
+    width: 50%;
+    border-bottom: 1px solid #e3dedc;
+    font-size: 14px;
+    font-family: $font-qs-medium;
+    padding-bottom: 2px;
+    padding-top: 4px;
+  }
+  .assignedActions {
+    padding-left: 45px;
+    margin-top: 30px;
+    padding-bottom: 30px;
+    border-bottom: 2px solid #e3dedc;
+    div svg {
+      float: right;
+      font-size: 15px;
+      cursor: pointer;
+      color: #c1b7b3;
+    }
+  }
+  .coachActions {
+    border-bottom: 2px solid #e3dedc;
+    padding-bottom: 30px;
+  }
+  .assignedPathway {
+    padding-left: 45px;
+    font-size: 15px;
+    font-family: $font-qs-medium;
+    margin-top: 30px;
+    cursor: pointer;
+    span {
+      display: inline-block;
+    }
+  }
+  .assignedPathwayDropdownIcon {
+    margin-top: -3px;
+    color: #c1b7b3;
+  }
+  .assignedPathwayDeleteIcon {
+    float: right;
+    font-size: 15px;
+    cursor: pointer;
+    color: #c1b7b3;
+    margin-right: 60px;
+  }
+  .assignedPathwayWeek {
+    padding-left: 50px;
+    font-size: 14px;
+    font-family: $font-qs-medium;
+    color: #f8890b;
+    margin-top: 5px;
+    margin-bottom: 2px;
+  }
+  .assignedPathwayWeekAction {
+    margin-left: 55px;
+    width: 50%;
+    border-bottom: 1px solid #e3dedc;
+    font-size: 14px;
+    font-family: $font-qs-medium;
+    padding-bottom: 2px;
+    padding-top: 4px;
+    svg {
+      float: right;
+      font-size: 15px;
+      cursor: pointer;
+      color: #c1b7b3;
+    }
+  }
+  .assignedPathwayWeekActionNoBorder {
+    margin-left: 55px;
+    width: 50%;
+    border-bottom: 1px solid #ffffff;
+    font-size: 14px;
+    font-family: $font-qs-medium;
+    padding-bottom: 2px;
+    padding-top: 4px;
+  }
+}

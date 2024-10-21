@@ -1,0 +1,134 @@
+{
+  "controlNumber": "000000001",
+  "tradingPartnerServiceId": "9496",
+  "submitter": {
+    "organizationName": "REGIONAL PPO NETWORK",
+    "contactInformation": {
+      "name": "SUBMITTER CONTACT INFO",
+      "phoneNumber": "123456789"
+    }
+  },
+  "receiver": {
+    "organizationName": "EXTRA HEALTHY INSURANCE"
+  },
+  "subscriber": {
+    "memberId": "0000000001",
+    "paymentResponsibilityLevelCode": "P",
+    "firstName": "johnone",
+    "lastName": "doeOne",
+    "gender": "M",
+    "dateOfBirth": "19800102",
+    "policyNumber": "00001",
+    "address": {
+      "address1": "123 address1",
+      "city": "city1",
+      "state": "wa",
+      "postalCode": "981010000"
+    }
+  },
+  "dependent": {
+    "memberId": "0000000002",
+    "paymentResponsibilityLevelCode": "P",
+    "firstName": "janeone",
+    "lastName": "doeOne",
+    "gender": "F",
+    "dateOfBirth": "19800102",
+    "policyNumber": "00002",
+    "relationshipToSubscriberCode": "01",
+    "address": {
+      "address1": "123 address1",
+      "city": "city1",
+      "state": "wa",
+      "postalCode": "981010000"
+    }
+  },
+  
+  "providers": [{
+    "providerType": "BillingProvider",
+    "npi": "1760854442",
+    "employerId": "123456789",
+    "organizationName": "HAPPY DOCTORS GROUPPRACTICE",
+    "address": {
+      "address1": "000 address1",
+      "city": "city2",
+      "state": "tn",
+      "postalCode": "372030000"
+    },
+    "contactInformation": {
+      "name": "janetwo doetwo",
+      "phoneNumber": "0000000001"
+    }
+  },{
+    "providerType": "ReferringProvider",
+    "npi": "1942788757",
+    "firstName": "johntwo",
+    "lastName": "doetwo",
+    "employerId" : "123456"
+  },{
+    "providerType": "RenderingProvider",
+    "npi": "1942788757",
+    "firstName": "janetwo",
+    "lastName": "doetwo",
+    "middleName": "middletwo",
+    "ssn" : "000000000"
+  }],
+  "claimInformation": {
+    "claimFilingCode": "CI",
+    "patientControlNumber": "12345",
+    "claimChargeAmount": "28.75",
+    "placeOfServiceCode": "11",
+    "claimFrequencyCode": "1",
+    "signatureIndicator": "Y",
+    "planParticipationCode": "A",
+    "benefitsAssignmentCertificationIndicator": "Y",
+    "releaseInformationCode": "Y",
+    "claimSupplementalInformation": {
+      "repricedClaimNumber": "00001",
+      "claimNumber": "12345"
+    },
+    "healthCareCodeInformation": [{
+      "diagnosisTypeCode": "BK",
+      "diagnosisCode": "496"
+    },{
+      "diagnosisTypeCode": "BF",
+      "diagnosisCode": "25000"
+    }],
+    "serviceFacilityLocation": {
+      "organizationName": "HAPPY DOCTORS GROUP",
+      "address": {
+        "address1": "000 address1",
+        "city": "city2",
+        "state": "tn",
+        "postalCode": "372030000"
+      }
+      },
+    "serviceLines":[ {
+      "serviceDate": "20050514",
+      "professionalService": {
+        "procedureIdentifier": "HC",
+        "lineItemChargeAmount": "25",
+        "procedureCode": "E0570",
+        "measurementUnit": "UN",
+        "serviceUnitCount": "1",
+        "compositeDiagnosisCodePointers": {
+          "diagnosisCodePointers": ["1","2"]
+        }
+      }
+      },
+      {
+        "serviceDate": "20050514",
+        "professionalService": {
+          "procedureIdentifier": "HC",
+          "lineItemChargeAmount": "3.75",
+          "procedureCode": "A7003",
+          "measurementUnit": "UN",
+          "serviceUnitCount": "1",
+          "compositeDiagnosisCodePointers": {
+            "diagnosisCodePointers": ["1" ]
+          }
+        }
+        }
+    ]
+
+  }
+}

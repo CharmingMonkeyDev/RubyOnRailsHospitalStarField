@@ -1,0 +1,59 @@
+.patient-invite-modal {
+  .paper {
+    @include paper-default-md;
+    margin-top: 1%;
+  }
+  .paperInner {
+    @include paper-inner-default-md;
+  }
+  .inviteHeader {
+    font-size: 24px;
+    font-family: $font-qs-medium;
+    font-weight: bold;
+    margin-bottom: 0;
+    text-align: center;
+  }
+  .loginLogo {
+    @include centered-block(30px);
+    margin-top: 0px;
+  }
+  .alert {
+    border: "1px solid #dbe3e6";
+  }
+  .modalText {
+    font-size: 15px;
+    font-family: $font-qs-medium;
+    font-weight: normal;
+    color: #707070;
+    text-align: center;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    @media (max-width: 600px) {
+      width: 100%;
+    }
+  }
+  .textInput {
+    @include input-base(100%);
+    margin-top: 10px;
+  }
+  .centerButton {
+    text-align: center;
+    margin-top: 10px;
+  }
+  .clearButtonStyling {
+    @include button-clear;
+  }
+  .textInputLabel {
+    font-size: 12px;
+    font-family: $font-qs-medium;
+    display: inline-block;
+    margin-top: 10px;
+  }
+  .modalTextSmall {
+    color: #707070;
+    font-size: 12px;
+    font-family: $font-qs-medium;
+    font-weight: normal;
+  }
+}

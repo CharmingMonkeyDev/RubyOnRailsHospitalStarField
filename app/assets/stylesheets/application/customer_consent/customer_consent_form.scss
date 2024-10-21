@@ -1,0 +1,55 @@
+.customer-consent-container {
+  margin-top: 6% !important;
+  .primary-header {
+    font-size: 24px !important;
+    color: black;
+    font-weight: bold;
+    text-align: center;
+    width: 100%;
+  }
+
+  .copy-content {
+    text-align: center;
+  }
+
+  .paper {
+    @include paper-default-md;
+  }
+  .paperInner {
+    @include paper-inner-default-md;
+  }
+  .twoFactorLogo {
+    @include centered-block(20px);
+  }
+  .loginTextCentered {
+    margin-left: auto;
+    margin-right: auto;
+    color: #939393;
+    display: inline-block;
+    font-size: 14px;
+    font-family: $font-qs-medium;
+  }
+  .textInput {
+    @include input-base(100%);
+    margin-top: 10px;
+  }
+  .clearButtonStyling {
+    @include button-clear;
+    float: right;
+  }
+  .loginButton {
+    float: right;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .customer-consent-container {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 601px) {
+  .customer-consent-container {
+    width: 30% !important;
+  }
+}

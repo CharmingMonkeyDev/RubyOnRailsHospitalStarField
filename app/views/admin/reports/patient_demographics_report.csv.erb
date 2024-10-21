@@ -1,0 +1,52 @@
+<% headers = [
+'Customer Name', #1
+'Customer County', #2
+'Last Name', #3
+'First Name', #4
+'Middle Name', #5
+'Date of Birth', #6
+'Gender', #7
+'MRN', #8
+'Address', #9
+'City', #10
+'State', #11
+'Zip', #12
+'County', #13
+'Race', #14
+'Ethnicity', #15
+'Insurance Type', #16
+'Insurance Name', #17
+'Insurance ID#', #18
+'Email', #19
+'Phone', #20
+'Linked to IIS?', #21
+'Linked to HIE?', #22
+] %>
+<%= CSV.generate_line headers -%>
+<%- @data.each do |im| -%>
+    <%= CSV.generate_line([
+        sanitize_string(im["name"]), #1
+        sanitize_string(im["customer_county"]), #2
+        sanitize_string(im["last_name"]), #3
+        sanitize_string(im["first_name"]), #4
+        sanitize_string(im["middle_name"]), #5
+        sanitize_string(im["date_of_birth"]), #6
+        sanitize_string(im["gender"]), #7
+        sanitize_string(im["mrn_number"]), #8 
+        sanitize_string(im["address"]), #9
+        sanitize_string(im["city"]), #10
+        sanitize_string(im["state"]), #11
+        sanitize_string(im["zip"]), #12
+        sanitize_string(im["county"]), #13
+        sanitize_string(im["race"]), #14
+        sanitize_string(im["ethnicity"]), #15
+        sanitize_string(im["insurance_type"]), #16
+        sanitize_string(im["plan_name"]), #17
+        sanitize_string(im["insured_id"]), #18
+        sanitize_string(im["email"]), #19
+        sanitize_string(im["mobile_phone_number"]), #20
+        sanitize_string(im["linked_to_iis"]), #21
+        sanitize_string(im["linked_to_hie"]), #22
+        ]) 
+    -%>
+<%-end-%>

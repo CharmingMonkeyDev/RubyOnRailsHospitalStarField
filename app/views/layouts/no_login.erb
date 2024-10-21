@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>NdPharmStarfield</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all' %>
+    <%= javascript_pack_tag 'application' %>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/5.0.6/jquery.inputmask.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+
+  <body class="no-login" style="overflow-y: auto !important;">
+    <div id="error-messages">
+      <%= react_component 'FlashMessages', messages: flash_messages %>
+      <%= react_component 'FlashMessages', messages: other_errors %>
+    </div>
+    <%= yield %>
+  </body>
+</html>

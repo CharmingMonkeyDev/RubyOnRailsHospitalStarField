@@ -1,0 +1,37 @@
+.customer-selection-modal {
+  .paper {
+    @include paper-default-md;
+  }
+  .paperInner {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    @media (max-width: 600px) {
+      padding: 16px 32px 24px;
+    }
+  }
+  .loginLogo {
+    @include centered-block(30px);
+  }
+  .twoFactorLogo {
+    @include centered-block(20px);
+  }
+  .textInput {
+    @include input-base(100%);
+  }
+  .loginTextCentered {
+    margin-left: auto;
+    margin-right: auto;
+    color: #939393;
+    display: inline-block;
+    font-size: 14px;
+    font-family: $font-qs-medium;
+  }
+  .loginButton {
+    float: right;
+  }
+  .clearButtonStyling {
+    @include button-clear;
+    float: right;
+  }
+}

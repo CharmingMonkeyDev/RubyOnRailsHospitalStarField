@@ -1,0 +1,656 @@
+@import "application/**/*";
+
+body {
+  font-family: "QuicksandMedium", "Roboto", "Helvetica", "Arial", sans-serif;
+}
+
+// this is really helpful to debug css
+// *{
+//   outline: 1px solid red;
+// }
+
+@font-face {
+  font-family: QuicksandBold;
+  src: font-url("Quicksand-Bold.ttf");
+}
+
+@font-face {
+  font-family: QuicksandLight;
+  src: font-url("Quicksand-Light.ttf");
+}
+
+@font-face {
+  font-family: QuicksandMedium;
+  src: font-url("Quicksand-Medium.ttf");
+}
+
+@font-face {
+  font-family: QuicksandRegular;
+  src: font-url("Quicksand-Regular.ttf");
+}
+
+@font-face {
+  font-family: QuicksandSemibold;
+  src: font-url("Quicksand-SemiBold.ttf");
+}
+
+body {
+  margin: 0px;
+  overflow-y: auto !important;
+  background-color: $main-background-grey;
+}
+
+/* CHAT BUILT IN STYLE OVERRIDES */
+.messaging.str-chat .str-chat__list {
+  background-color: white !important;
+}
+
+.str-chat.messaging,
+.str-chat.commerce {
+  background-color: white !important;
+}
+
+.str-chat-channel.messaging .str-chat__main-panel {
+  padding: 0px !important;
+}
+
+.str-chat__input {
+  background-color: white !important;
+  box-shadow: none !important;
+}
+
+.str-chat__input-footer {
+  background-color: white !important;
+  margin-top: 10px !important;
+}
+
+.str-chat__textarea textarea {
+  border-radius: 4px !important;
+  background-color: #efe9e7;
+}
+
+.rfu-file-upload-button {
+  margin-top: 2px !important;
+}
+
+.str-chat__input-emojiselect {
+  margin-top: 2px !important;
+}
+
+.str-chat__message-text-inner,
+.str-chat__message-simple-text-inner {
+  border-radius: 4px 4px 4px 0px !important;
+}
+
+.str-chat__message--me .str-chat__message-text-inner,
+.str-chat__message-simple--me .str-chat__message-text-inner {
+  border-radius: 4px 4px 0px 4px !important;
+  background-color: #ff890a33 !important;
+}
+
+.str-chat {
+  height: 100% !important;
+}
+
+.str-chat__avatar--circle {
+  display: none !important;
+}
+
+.str-chat__message-simple-status-number {
+  display: none !important;
+}
+
+.str-chat__message-simple__actions__action--thread {
+  display: none !important;
+}
+
+.str-chat__message-text,
+.str-chat__message-simple-text {
+  display: inline-block !important;
+}
+
+.basic-input-field {
+  width: 95%;
+  background-color: $background-grey;
+  border-radius: 5px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+
+  fieldset {
+    border: none;
+    outline: none;
+  }
+}
+
+.MuiSwitch-colorSecondary.Mui-checked {
+  color: $primary-orange !important;
+}
+
+.MuiSwitch-colorSecondary.Mui-checked + .MuiSwitch-track {
+  background-color: #3f51b5 !important;
+  opacity: 1 !important; //was 0.38
+}
+
+.MuiCheckbox-colorSecondary.Mui-checked {
+  color: $primary-orange !important;
+}
+.MuiCheckbox-colorSecondary.Mui-checked.Mui-disabled {
+  color: rgba(0, 0, 0, 0.26)!important;
+}
+
+.MuiRadio-colorSecondary.Mui-checked {
+  color: $primary-orange !important;
+}
+
+.move-down {
+  margin-top: 119px !important;
+}
+
+.table-container {
+  padding-left: 32px;
+  padding-right: 92px;
+  margin-top: 30px;
+}
+
+.MuiTab-root {
+  min-height: auto !important;
+}
+
+.checkbox-container {
+  display: flex;
+  align-items: center;
+  label {
+    display: inline;
+    height: min-content;
+    font-size: 0.7rem;
+  }
+}
+
+// forms
+label.plainLabel,
+.plainLabel > label {
+  &.MuiFormLabel-root.Mui-focused {
+    color: rgba(0, 0, 0, 0.54) !important;
+  }
+}
+// end forms
+
+.MuiSwitch-colorPrimary.Mui-checked {
+  color: $primary-orange !important;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.cancel-link {
+  font-family: $font-qs-medium;
+  color: rgb(49, 49, 51) !important;
+  text-decoration: underline;
+}
+
+a.disabled {
+  cursor: unset;
+  pointer-events: none;
+}
+
+.adminHeader {
+  font-size: 18px;
+  @media (max-width: 1400px) {
+    font-size: 14px;
+  }
+  font-family: $font-qs-medium;
+  border-bottom: 4px solid $color-primary-orange;
+  padding-left: 50px;
+
+  .add-patient-label {
+    float: left;
+    font-family: $font-qs-medium;
+    color: #a29d9b;
+    margin-top: 8px;
+  }
+}
+
+.main-content {
+  padding-left: 120px;
+  margin-left: -18px;
+}
+
+.userAdminInformation {
+  @include responsive-grid-item-media-queries;
+  background-color: #ffffff;
+  box-shadow: 1px 1px 1px 1px #666666;
+  border-radius: 4px;
+  margin-right: 30px;
+  padding-bottom: 10px;
+  p {
+      font-family: $font-qs-medium;
+    }
+}
+
+.footer {
+  position: relative;
+  margin-top: -20px;
+  text-align: center;
+  background-color: $main-background-grey;
+}
+
+.footer.patient {
+  background-color: #ffffff;
+}
+
+.confirm-btn-container {
+  text-align: center;
+  .confirm-btn {
+    background-color: $primary-orange;
+    border-radius: 5px;
+    padding: 10px;
+    display: inline-block;
+    width: 200px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  .confirm-btn:hover {
+    background-color: $primary-orange;
+  }
+}
+
+.default-btn, .MuiButton-contained.default-btn {
+  background-color: $primary-orange;
+  border-radius: 5px;
+  padding: 10px;
+  display: inline-block;
+  width: 200px;
+  color: white !important;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.default-btn:hover, .MuiButton-contained.default-btn:hover {
+  background-color: $primary-orange;
+}
+
+.cancel-link {
+  display: inline-block;
+  color: black;
+  padding: 10px;
+  font-size: 14px;
+  margin-left: 26px;
+  cursor: pointer;
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.action-link {
+  cursor: pointer;
+  &:hover {
+    text-decoration: none !important;
+  }
+  span {
+    vertical-align: middle;
+    color: $font-grey;
+    font-size: 0.9rem;
+    font-weight: bold;
+    margin-left: 3px;
+  }
+}
+
+.expand-icon {
+  color: #4a4442;
+}
+
+textarea {
+  padding: 5px;
+}
+.footer.patient {
+  background-color: #ffffff;
+}
+
+.ql-container {
+  background-color: $background-grey;
+}
+
+.ql-note-container {
+  background-color: $background-grey;
+  padding: 12px;
+  // overrider some ql styles
+  .ql-container {
+    border: none !important;
+    border-bottom: 1px solid black !important;
+
+    .ql-editor {
+      padding-left: 0px;
+    }
+  }
+}
+
+// ovriding ql for message board
+.ql-message-container {
+  
+  // overrider some ql styles
+  .ql-container {
+    border: none !important;
+    background-color: white;
+
+    .ql-editor {
+      padding-left: 0px;
+    }
+  }
+}
+
+.qnc__health-overview {
+  // specific style for health overview notes
+  background-color: white;
+  .ql-container {
+    background-color: white;
+    border: none !important;
+  }
+}
+
+.patient-back-botton {
+  font: 30px QuicksandMedium;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: -6px;
+}
+
+.center-text {
+  text-align: center;
+}
+
+.patient-page-heading {
+  border-bottom: 1px solid #948b87;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+}
+
+.patient-page-title {
+  & span {
+    font: 26px QuicksandMedium;
+  }
+}
+
+.divider-orange {
+  border-bottom: 4px solid $color-primary-orange;
+  margin: 20px 0;
+}
+
+.divider-grey {
+  border-bottom: 4px solid #EFE9E7;;
+  margin: 20px 0;
+}
+
+.panel-grey-background{
+  background-color: $panel-grey;
+}
+
+.shadowed-box {
+  background-color: #ffffff;
+  box-shadow: 1px 1px 1px 1px #666666;
+  border-radius: 4px;
+}
+
+.basic-button {
+  @include button-basic(12pt);
+}
+
+.orange-btn {
+  background-color: $color-primary-orange !important;
+  border-color: $color-primary-orange !important;
+  color: white !important;
+}
+
+.red-btn {
+  background-color: $red !important;
+  border-color: $red !important;
+  color: white !important;
+}
+
+.plus-icon {
+  background-color: white;
+}
+
+.plus-icon-with-ring{
+  border: 2px solid $color-grey-text;
+  color: $color-primary-orange;
+  vertical-align: middle;
+  border-radius: 50%;
+}
+
+.orange-icon {
+  color: $color-primary-orange;
+}
+
+a {
+  cursor: pointer;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+// font commont styles
+.font-14px {
+  font-size: 14px;
+}
+
+.font-16px {
+  font-size: 16px;
+}
+
+.font-21px{
+  font-size: 21px;
+}
+
+.ml-10{
+  margin-left: 10px;
+}
+
+.mr-10{
+  margin-right: 10px;
+}
+
+.sortIndicator {
+  display: inline-block;
+  margin-left: 10px;
+  padding-top: 5px;
+}
+
+.grey-font {
+  color: $font-grey !important;
+}
+
+.bold-font-face {
+  font-family: $font-qs-bold !important;
+}
+b {
+  font-family: $font-qs-bold !important;
+}
+
+// colors
+.color-primary {
+  color: $primary-orange;
+}
+
+// MUI overrides
+.MuiSelect-select,
+.MuiFilledInput-input,
+.MuiInputBase-input,
+.MuiInputLabel-root {
+  font-family: $font-qs-medium !important;
+}
+.MuiOutlinedInput-input {
+  padding: 10.5px !important;
+}
+.MuiInputBase-multiline {
+  padding: 25px 10.5px 10.5px 10.5px !important;
+}
+
+.MuiSelect-select {
+  align-items: left;
+}
+
+.MuiDataGrid-columnHeaderTitle {
+  font-weight: bold !important;
+}
+.next-date {
+  margin-top: 5px !important;
+}
+
+.MuiDataGrid-cell {
+  display: flex !important;
+  align-items: flex-start !important;
+  padding-top: 10px !important;
+}
+.MuiDataGrid-cellContent {
+  word-break: normal !important;
+}
+
+.MuiDataGrid-row:nth-of-type(even) {
+  background-color: $subtle-grey !important;
+}
+.space-for-breadcrum {
+  margin-bottom: 35px !important;
+}
+
+// Calendar overrides
+.MuiPickersCalendarHeader-switchHeader {
+  border-bottom: 2px $color-primary-orange solid;
+}
+
+.MuiPickersCalendar-transitionContainer {
+  border-top: 2px $color-primary-orange solid;
+}
+.MuiPickersToolbar-toolbar, .MuiPickersClock-pin,
+.MuiPickersClockPointer-pointer, .MuiPickersClockNumber-clockNumberSelected  {
+  background-color: $color-primary-orange !important;
+}
+.MuiDialogActions-spacing >.MuiButton-textPrimary {
+  color: $color-primary-orange !important;
+}
+
+.MuiButtonBase-root.MuiIconButton-root.MuiPickersDay-day.MuiPickersDay-daySelected {
+  background-color: $color-primary-orange;
+  border-radius: 3px;
+}
+
+.calendarOutline {
+  border: 1px $color-primary-orange solid;
+}
+
+.MuiButtonBase-root.MuiIconButton-root.MuiPickersCalendarHeader-iconButton {
+  color: $color-primary-orange;
+}
+
+.nowrap-header {
+  white-space: nowrap;
+}
+.bolder-text {
+  font-weight: bolder;
+}
+.subdued-text {
+  font-weight: lighter;
+  font-size: 0.9em;
+  color: #787877;
+}
+.first-column {
+  padding-left: 32px !important;
+}
+.no-border-table {
+  border-collapse: collapse;
+
+  th, td {
+    border: none;
+    padding: 12px;
+  }
+}
+
+.last-column {
+  padding-right: 42px !important;
+}
+
+// Headers
+.grey-plus-label {
+  font-size: 18px;
+  float: left;
+  font-family: QuicksandMedium;
+  color: rgb(162, 157, 155);
+  margin-top: 8px;
+}
+
+.border-bottom-header {
+  border-bottom: 2px solid $color-primary-orange;
+  padding-left: 20px;
+  @media (max-width: 1400px) {
+    margin-top: 5px;
+    padding-bottom: 5px;
+  }
+}
+
+.quick-sand-medium-text {
+  font-family: 'QuicksandMedium !important';
+}
+.MuiDataGrid-columnHeaderTitle{
+  font-family: QuicksandBold;
+}
+.text-normal {
+  text-transform: unset !important;
+}
+.field-container {
+  margin-left: 10px;
+  .the-field {
+    width: 95%;
+    background-color: $background-grey;
+    border-radius: 5px;
+
+    fieldset {
+      border: none;
+      outline: none;
+    }
+  }
+}
+
+// We need to apply to all input with text type to apply fontsize
+input[type="text"] {
+  color: #4A4442;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 21px;
+}
+
+.no-border-outline {
+  border: none !important ;
+  fieldset {
+    border: none;
+    outline: none;
+  }
+}
+.no-border-outline input {
+  border: none !important ;
+}
+.css-10o2lyd-MuiStack-root {
+  padding-top: 0 !important;
+}
+
+.facility-field {
+  width: 100%;
+  background-color: $background-grey;
+  border-radius: 5px;
+}
+
+.facility-text {
+  color: var(--dark-grey, #1E1E1E);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 22px;
+  border: none !important;
+  fieldset {
+    border: none;
+    outline: none;
+  }
+}

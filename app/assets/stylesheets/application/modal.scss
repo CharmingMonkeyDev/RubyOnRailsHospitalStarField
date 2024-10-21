@@ -1,0 +1,57 @@
+.modal-primary {
+  .paper, .paperInner {
+    padding: 0;
+  }
+
+  .main-header {
+    font-size: 21px;
+    font-weight: 700;
+    padding: 25px;
+    border-bottom: 2px solid $color-primary-orange;
+    color: #4A4442;
+    margin-bottom: 32px; //ends up being 24px as per figma
+    #dismiss-button {
+      float: right;
+      cursor: pointer;
+    }
+  }
+
+  .modal-content {
+    padding: 25px;
+
+    .input {
+      width: 100%;
+      min-width: 150px;
+      border-radius: 4px;
+      background-color: #fcf6f4;
+    }
+  }
+  
+  .modal-footer {
+    padding: 25px;
+    
+    .cancel-link {
+      margin-right: 25px;
+      text-decoration: none;
+    }
+    
+    .confirm-btn {
+      text-transform: capitalize;
+    }
+
+    .modal-save-btn {
+      width: 144px;
+      padding: 8px 22px;
+    }
+  }
+
+}
+
+.align-center {
+  text-align: center !important;
+}
+
+.history-modal .modal-footer {
+  padding-bottom: 0;
+  padding-top: 15px;
+}
