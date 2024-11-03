@@ -143,7 +143,7 @@ class User < ApplicationRecord
   end
 
   def name_reversed
-    "#{self.last_name}, #{self.first_name} #{self.middle_name}"
+    "#{self.last_name}, #{self.first_name} #{self.middle_name&.first&.capitalize}"
   end
 
   def age
@@ -292,7 +292,7 @@ class User < ApplicationRecord
   end
 
   def diagnosis_code_values
-    diagnosis_assignments.map(&:diagnosis_code_value).uniq
+    assigned_diagnoses.map(&:diagnosis_code_value).uniq
   end
 
   def insurance_types_list

@@ -3,7 +3,10 @@
 Rails.application.routes.draw do
   post "patient_lists/remove_patients", to: "patient_lists#remove_patients"
   get 'patient_medications/index'
-  devise_for :users, controllers: {sessions: "users/sessions"}
+  devise_for :users, controllers: { sessions: "users/sessions" }
+  devise_scope :user do
+    post "/set_timezone", to: "users/sessions#set_timezone"
+  end
   root to: 'pages#index'
 
   # chat routes
@@ -72,6 +75,8 @@ Rails.application.routes.draw do
   resources :company_action_settings, only: [:index, :create]
   put "action_queues/:id/assign_to_provider", to: "action_queues#assign_to_provider"
   put "action_queues/:id/unassign", to: "action_queues#unassign"
+  put "action_queues/:id/update_status", to: "action_queues#update_status"
+  put "action_queues/:id/steps/:action_step_id/update_step_status", to: "action_queues#update_step_status"
   scope '/patients/:patient_id' do
     put "assigned_programs/:id/complete_program", to: "assigned_programs#complete_program"
     put "assigned_provider_actions/:id/complete_action", to: "assigned_provider_actions#complete_action"
@@ -185,6 +190,7 @@ Rails.application.routes.draw do
   post "resend_provider_invitation/:user_id", to: "user#resend_provider_invitation", as: "resend_provider_invitation"
   patch "user/:id/deactivate", to: "user#deactivate"
   patch "user/:id/reactivate", to: "user#reactivate"
+  patch "user/:id/toggle_cgm", to: "user#toggle_cgm"
   resources :lab_readings, only: [:create, :update]
 
 
@@ -238,9 +244,13 @@ Rails.application.routes.draw do
 
     get 'action_queues/:id/histories', to: "action_queues#histories"
     get 'global_action_queues', to: "action_queues#global_action_queues"
+    get 'global_action_filter_options', to: "action_queues#global_action_filter_options"
+    
     get 'action_stats', to: "action_queues#action_stats"
+    get 'get_incompleted_actions', to: "action_queues#get_incompleted_actions"
     get 'get_patients_with_unassigned_actions', to: "action_queues#get_patients_with_unassigned_actions"
     get 'get_patients_with_assigned_actions', to: "action_queues#get_patients_with_assigned_actions"
+    get 'get_patient_actions', to: "action_queues#get_patient_actions"
     get 'get_date_range', to: "action_queues#get_date_range"
     get 'get_initial_queue_data', to: "action_queues#get_initial_queue_data" 
     get 'get_provider_list', to: "action_queues#get_provider_list"

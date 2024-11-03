@@ -1,4 +1,6 @@
 class ProcessInboundAdtNotification
+    include LogHelper
+    
     def initialize(attributes)
         @attributes = attributes
         @adt_inbound_notification_id = attributes[:adt_inbound_notification_id]
@@ -43,10 +45,12 @@ class ProcessInboundAdtNotification
 
         # Action depending on discharge record
         if adt_patient_notification.event_type == "A03"
+            puts "Calling ProcessAdtDischargeActionQueue" if Rails.env.development?
             ProcessAdtDischargeActionQueue.new({adt_patient_notification_id: adt_patient_notification.id}).call
         end
         adt_patient_notification
     rescue StandardError => e
+        log_errors(e)
         Rollbar.warning("Error: #{e} --ProcessInboundAdtNotification::process_inbound_notif")
     end
 

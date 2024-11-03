@@ -7,8 +7,10 @@ class CreateLiveActions
 
   def call
     if @assigned_program.present?
+      Rails.logger.info("Creating Live Actions for assigned program id: #{@assigned_program.id}")
       create_program_live_actions
     elsif @assigned_provider_action.present?
+      Rails.logger.info("Creating Live Actions for assigned action id: #{@assigned_provider_action.id}")
       create_provider_action_live_actions
     end
   end
@@ -57,12 +59,12 @@ class CreateLiveActions
         end
       else
         # Only create one instance when repeat is false
-        aq = ActionQueue.create!(
+        aq = ActionQueue.where(
           patient_id: assigned_program.patient_id,
           action_id: program_action.action_id,
           assigned_program_id: assigned_program.id,
           due_date: actual_start_date
-        )
+        ).first_or_create
       end
     end
   end
@@ -85,6 +87,7 @@ class CreateLiveActions
     }
     while total_created < limit
       next_due_date = calculate_next_due_date(actual_start_date, action_data.repeat_unit, action_data.repeat_value, i)
+      
       if action_data.repeat_unit == 'week'
         created_count = 0
         due_date_starting_of_week = next_due_date.beginning_of_week
@@ -92,30 +95,33 @@ class CreateLiveActions
           if action_data.send(day)
             due_date = due_date_starting_of_week + offset.days
             if due_date >= Date.today
-              ActionQueue.create!(
+              ActionQueue.where(
                 patient_id: patient_id,
                 action_id: action_id,
                 assigned_program_id: program_id,
                 assigned_provider_action_id: assigned_provider_action_id,
                 due_date: due_date
-              )
+              ).first_or_create
               total_created += 1
             end
             break if total_created >= limit
           end
         end
       else
-        ActionQueue.create!(
+        ActionQueue.where(
           patient_id: patient_id,
           action_id: action_id,
           assigned_program_id: program_id,
           assigned_provider_action_id: assigned_provider_action_id,
           due_date: next_due_date
-        )
+        ).first_or_create
         total_created += 1
       end
 
       i+=1
+      if i>100
+        break
+      end
     end
   end
 
@@ -136,7 +142,7 @@ class CreateLiveActions
     }
     next_due_date = calculate_next_due_date(actual_start_date, action_data.repeat_unit, action_data.repeat_value, i)
 
-    while next_due_date <= end_date
+    while next_due_date <= end_date and total_created <= 30
       if action_data.repeat_unit == 'week'
         created_count = 0
         due_date_starting_of_week = next_due_date.beginning_of_week
@@ -144,25 +150,25 @@ class CreateLiveActions
           if action_data.send(day)
             due_date = due_date_starting_of_week + offset.days
             if due_date >= Date.today and due_date >= actual_start_date
-              ActionQueue.create!(
+              ActionQueue.where(
                 patient_id: patient_id,
                 action_id: action_id,
                 assigned_program_id: program_id,
                 assigned_provider_action_id: assigned_provider_action_id,
                 due_date: due_date
-              )
+              ).first_or_create
               total_created += 1
             end
           end
         end
       else
-        ActionQueue.create!(
+        ActionQueue.where(
           patient_id: patient_id,
           action_id: action_id,
           assigned_program_id: program_id,
           assigned_provider_action_id: assigned_provider_action_id,
           due_date: next_due_date
-        )
+        ).first_or_create
         total_created += 1
       end
       i+=1
@@ -230,14 +236,13 @@ class CreateLiveActions
       end
     else
       # Only create one instance when repeat is false
-      aq = ActionQueue.create!(
+      aq = ActionQueue.where(
         patient_id:  @assigned_provider_action.patient_id,
         action_id: provider_action.id,
         assigned_program_id: nil,
         assigned_provider_action_id: @assigned_provider_action.id,
         due_date: actual_start_date
-      )
+      ).first_or_create
     end
   end
-
 end

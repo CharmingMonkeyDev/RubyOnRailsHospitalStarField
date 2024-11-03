@@ -58,7 +58,7 @@ class Customer < ApplicationRecord
             if privilege.name == "Edit Patient"
                 create_customer_default_privilege(privilege.id, true, true, true, true)
             end
-            if privilege.name == "Add Customer Association"
+            if privilege.name == "Edit Customer Association"
                 create_customer_default_privilege(privilege.id, true, true, true, false)
             end
             if privilege.name == "View Customers"

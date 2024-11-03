@@ -6,13 +6,15 @@ class ActionQueue < ApplicationRecord
   has_one :customer, through: :action
   belongs_to :provider, class_name: "User", foreign_key: "assigned_to_id", optional: true
   has_many :action_queue_histories, dependent: :destroy
+  has_many :action_step_queues
+
+  # after_create :create_action_step_queues
 
   enum status: {
     "incomplete": "incomplete",
     "complete": "complete",
     "skipped": "skipped"
   }
-
   # def self.fetch_combined_actions_with_steps(customer_id, past_days, future_days, limit = 30, offset = 0)
   #   query = <<-SQL
   #     WITH actions_combined AS (
@@ -124,13 +126,22 @@ class ActionQueue < ApplicationRecord
 
   def get_readable_recurrence
     assigned_program = AssignedProgram.where(id: self.assigned_program_id).first
+    action_recurrence = Action.find(self.action_id).get_readable_recurrence
     if assigned_program.present?
       pa = ProgramAction.where(program_id: assigned_program.program_id, action_id: self.action_id).first
       if pa.present?
-        return pa.get_readable_recurrence
+        return pa.get_readable_recurrence || action_recurrence
       end
     end
     
-    return Action.find(self.action_id).get_readable_recurrence
+    return action_recurrence
   end
+
+  # private
+
+  # def create_action_step_queues
+  #   action.action_steps.each do |step|
+  #     action_step_queues.create(action_step: step, status: :incomplete)
+  #   end
+  # end
 end

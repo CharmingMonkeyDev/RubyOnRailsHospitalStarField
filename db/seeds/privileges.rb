@@ -19,8 +19,8 @@ if Privilege.count.zero?
       default_patient: false
   )
   Privilege.create!(
-      name: "Add Customer Association",
-      description: "Add Customer Association",
+      name: "Edit Customer Association",
+      description: "Edit Customer Association",
       default_pharmacist: true,
       default_physician: false,
       default_coach: false,
@@ -116,7 +116,7 @@ default_patient: false
 ndm_report_privilege = Privilege.find_or_create_by(name: ndm_report_privilege_attributes[:name])
 ndm_report_privilege.update(ndm_report_privilege_attributes)
 
-# LTC Facilities Builder seeds
+# Living Facilities Builder seeds
 build_ltc_facility_privilege_attributes = {
 name: "Access Living Facility Builder",
 description: "Access Living Facility Builder",

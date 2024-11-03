@@ -1,0 +1,2 @@
+class PlaceOfServiceCode < ApplicationRecord
+end
