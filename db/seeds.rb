@@ -31,5 +31,6 @@ seeds = %w[
   patient_insurance_types
   encounter_billings
   notes_templates
+  place_of_service_codes
 ]
 load_seeds(seeds)

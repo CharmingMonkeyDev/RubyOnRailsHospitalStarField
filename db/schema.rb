@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2024_09_16_083545) do
+ActiveRecord::Schema.define(version: 2024_10_23_200012) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
@@ -49,6 +49,17 @@ ActiveRecord::Schema.define(version: 2024_09_16_083545) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "customer_id"
+  end
+
+  create_table "action_queue_histories", force: :cascade do |t|
+    t.bigint "action_queue_id", null: false
+    t.bigint "user_id"
+    t.string "history_type"
+    t.text "description"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["action_queue_id"], name: "index_action_queue_histories_on_action_queue_id"
+    t.index ["user_id"], name: "index_action_queue_histories_on_user_id"
   end
 
   create_table "action_queues", force: :cascade do |t|
@@ -116,6 +127,16 @@ ActiveRecord::Schema.define(version: 2024_09_16_083545) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["action_step_id"], name: "index_action_step_automations_on_action_step_id"
     t.index ["questionnaire_id"], name: "index_action_step_automations_on_questionnaire_id"
+  end
+
+  create_table "action_step_queues", force: :cascade do |t|
+    t.bigint "action_queue_id", null: false
+    t.bigint "action_step_id", null: false
+    t.string "status", default: "incomplete"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["action_queue_id"], name: "index_action_step_queues_on_action_queue_id"
+    t.index ["action_step_id"], name: "index_action_step_queues_on_action_step_id"
   end
 
   create_table "action_step_quick_launches", force: :cascade do |t|
@@ -220,12 +241,12 @@ ActiveRecord::Schema.define(version: 2024_09_16_083545) do
   end
 
   create_table "adt_provider_actions", force: :cascade do |t|
-    t.bigint "assigned_pathway_week_action_id", null: false
     t.bigint "adt_patient_notification_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "action_queue_id"
+    t.index ["action_queue_id"], name: "index_adt_provider_actions_on_action_queue_id"
     t.index ["adt_patient_notification_id"], name: "index_adt_provider_actions_on_adt_patient_notification_id"
-    t.index ["assigned_pathway_week_action_id"], name: "index_adt_provider_actions_on_assigned_pathway_week_action_id"
   end
 
   create_table "ambulatory_weekly_results", force: :cascade do |t|
@@ -517,14 +538,6 @@ ActiveRecord::Schema.define(version: 2024_09_16_083545) do
     t.index ["priority", "run_at"], name: "delayed_jobs_priority"
   end
 
-  create_table "diagnoses", force: :cascade do |t|
-    t.string "code"
-    t.string "code_description"
-    t.string "source_type"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
   create_table "diagnosis_assignments", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.string "diagnosis_code_value"
@@ -620,7 +633,6 @@ ActiveRecord::Schema.define(version: 2024_09_16_083545) do
     t.bigint "customer_id"
     t.string "interchange_number"
     t.string "transaction_set_number"
-    t.string "claim_status"
     t.index ["created_by_id"], name: "index_encounter_billings_on_created_by_id"
     t.index ["customer_id"], name: "index_encounter_billings_on_customer_id"
     t.index ["patient_id"], name: "index_encounter_billings_on_patient_id"
@@ -761,168 +773,6 @@ ActiveRecord::Schema.define(version: 2024_09_16_083545) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["answer_id"], name: "index_multiple_choice_answers_on_answer_id"
     t.index ["option_id"], name: "index_multiple_choice_answers_on_option_id"
-  end
-
-  create_table "ndm_drug_claims", force: :cascade do |t|
-    t.bigint "ndm_report_id", null: false
-    t.string "allowed_amount"
-    t.string "charge_submitted"
-    t.string "dispensing_fee"
-    t.string "copay"
-    t.string "third_party_amount"
-    t.string "out_of_pocket_responsibility"
-    t.string "net_paid"
-    t.string "base_amount_source_description"
-    t.string "base_amount_source"
-    t.string "aid_category_description"
-    t.string "aid_category"
-    t.string "compound_indicator"
-    t.string "service_date"
-    t.string "paid_date"
-    t.string "days_supply"
-    t.string "rx_refill_number"
-    t.string "living_arrangement_description"
-    t.string "living_arrangement_code"
-    t.string "daw_code"
-    t.string "ndc_code"
-    t.string "prescription_code"
-    t.string "authorization_id"
-    t.string "prescribing_provider_npi"
-    t.string "servicing_provider_npi"
-    t.string "recipient_mmis_id"
-    t.string "metric_quantity_dispensed"
-    t.string "recipient_liability"
-    t.string "status_code_description"
-    t.string "claim_id"
-    t.string "line_number"
-    t.string "transaction_type_description"
-    t.string "transaction_type_code"
-    t.string "original_claim_id"
-    t.string "replaced_claim_id"
-    t.string "medicaid_eligibility_indicator"
-    t.string "prescribing_provider_system_id"
-    t.string "service_provider_system_id"
-    t.string "benefit_plan_id"
-    t.string "drug_name"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["ndm_report_id"], name: "index_ndm_drug_claims_on_ndm_report_id"
-    t.index ["recipient_mmis_id"], name: "index_ndm_drug_claims_on_recipient_mmis_id"
-    t.index ["servicing_provider_npi"], name: "index_ndm_drug_claims_on_servicing_provider_npi"
-  end
-
-  create_table "ndm_medical_claims", force: :cascade do |t|
-    t.bigint "ndm_report_id", null: false
-    t.string "claim_type_description"
-    t.string "claim_type_code"
-    t.string "recipient_mmis_id"
-    t.string "claim_id"
-    t.string "original_claim_id"
-    t.string "replaced_claim_id"
-    t.string "line_number"
-    t.string "billing_provider_npi"
-    t.string "status_code_description"
-    t.string "claim_header_status_code"
-    t.string "transaction_type_description"
-    t.string "transaction_type_code"
-    t.string "revenue_code"
-    t.string "revenue_code_description"
-    t.string "surgical_procedure_1"
-    t.string "surgical_procedure_2"
-    t.string "surgical_procedure_3"
-    t.string "surgical_procedure_4"
-    t.string "surgical_procedure_5"
-    t.string "surgical_procedure_6"
-    t.string "procedure_code"
-    t.string "procedure_code_description"
-    t.string "drg_code_description"
-    t.string "drg_code"
-    t.string "drg_code_version"
-    t.string "diagnosis_code_principal"
-    t.string "diagnosis_code_2"
-    t.string "diagnosis_code_3"
-    t.string "diagnosis_code_4"
-    t.string "diagnosis_code_5"
-    t.string "diagnosis_code_6"
-    t.string "diagnosis_code_7"
-    t.string "diagnosis_code_8"
-    t.string "diagnosis_code_9"
-    t.string "diagnosis_code_10"
-    t.string "diagnosis_code_11"
-    t.string "diagnosis_code_12"
-    t.string "service_date"
-    t.string "last_service_date"
-    t.string "cos_description"
-    t.string "cos_code"
-    t.string "net_payment_amount"
-    t.string "medicaid_eligibility"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["billing_provider_npi"], name: "index_ndm_medical_claims_on_billing_provider_npi"
-    t.index ["ndm_report_id"], name: "index_ndm_medical_claims_on_ndm_report_id"
-    t.index ["recipient_mmis_id"], name: "index_ndm_medical_claims_on_recipient_mmis_id"
-  end
-
-  create_table "ndm_patient_eligiblities", force: :cascade do |t|
-    t.bigint "ndm_report_id", null: false
-    t.bigint "starfield_user_id"
-    t.string "service_month"
-    t.string "medicaid_id"
-    t.string "mmis_id"
-    t.string "last_name"
-    t.string "first_name"
-    t.string "middle_name"
-    t.string "gender"
-    t.string "race_american_indian"
-    t.string "race_asian"
-    t.string "race_african_american"
-    t.string "race_hawaiian"
-    t.string "race_unknown"
-    t.string "race_white"
-    t.string "dob"
-    t.string "county_code"
-    t.string "address_line_1"
-    t.string "address_line_2"
-    t.string "city"
-    t.string "state"
-    t.string "zip"
-    t.string "medicaid_eligibility"
-    t.string "medicaid_coe_code"
-    t.string "medicaid_coe_code_description"
-    t.string "medicaid_start_date"
-    t.string "medicaid_end_date"
-    t.string "medicare_eligibility"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["mmis_id"], name: "index_ndm_patient_eligiblities_on_mmis_id"
-    t.index ["ndm_report_id"], name: "index_ndm_patient_eligiblities_on_ndm_report_id"
-  end
-
-  create_table "ndm_providers", force: :cascade do |t|
-    t.bigint "ndm_report_id", null: false
-    t.string "npi"
-    t.string "last_name"
-    t.string "first_name"
-    t.string "dba"
-    t.string "address_1"
-    t.string "address_2"
-    t.string "city"
-    t.string "state"
-    t.string "zip"
-    t.string "code_extension"
-    t.string "phone"
-    t.string "county_code"
-    t.string "type_code"
-    t.string "type_description"
-    t.string "speciality_code"
-    t.string "speciality_description"
-    t.string "license_number"
-    t.string "certification_number"
-    t.string "system_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["ndm_report_id"], name: "index_ndm_providers_on_ndm_report_id"
-    t.index ["npi"], name: "index_ndm_providers_on_npi"
   end
 
   create_table "ndm_reports", force: :cascade do |t|
@@ -1119,6 +969,13 @@ ActiveRecord::Schema.define(version: 2024_09_16_083545) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_patient_notes_on_user_id"
+  end
+
+  create_table "place_of_service_codes", force: :cascade do |t|
+    t.string "code"
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "privileges", force: :cascade do |t|
@@ -1378,6 +1235,7 @@ ActiveRecord::Schema.define(version: 2024_09_16_083545) do
     t.bigint "patient_insurance_id"
     t.bigint "secondary_patient_insurance_id"
     t.bigint "ltc_facility_id"
+    t.boolean "cgm_enabled", default: false, null: false
     t.index ["deleted_at"], name: "index_users_on_deleted_at"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["invitation_token"], name: "index_users_on_invitation_token", unique: true
@@ -1402,6 +1260,7 @@ ActiveRecord::Schema.define(version: 2024_09_16_083545) do
   add_foreign_key "action_categories", "customers"
   add_foreign_key "action_pathway_week_actions", "action_pathway_weeks"
   add_foreign_key "action_pathway_weeks", "action_pathways"
+  add_foreign_key "action_queue_histories", "users"
   add_foreign_key "action_queues", "actions"
   add_foreign_key "action_queues", "assigned_programs"
   add_foreign_key "action_queues", "assigned_provider_actions"
@@ -1411,6 +1270,8 @@ ActiveRecord::Schema.define(version: 2024_09_16_083545) do
   add_foreign_key "action_resources", "resource_items"
   add_foreign_key "action_step_automations", "action_steps"
   add_foreign_key "action_step_automations", "questionnaires"
+  add_foreign_key "action_step_queues", "action_queues"
+  add_foreign_key "action_step_queues", "action_steps"
   add_foreign_key "action_step_quick_launches", "action_steps"
   add_foreign_key "action_step_quick_launches", "questionnaires"
   add_foreign_key "action_step_resources", "action_steps"
@@ -1422,8 +1283,8 @@ ActiveRecord::Schema.define(version: 2024_09_16_083545) do
   add_foreign_key "adt_outbound_logs", "users", column: "requested_by_id"
   add_foreign_key "adt_patient_notifications", "adt_inbound_notifications"
   add_foreign_key "adt_patient_notifications", "users"
+  add_foreign_key "adt_provider_actions", "action_queues"
   add_foreign_key "adt_provider_actions", "adt_patient_notifications"
-  add_foreign_key "adt_provider_actions", "assigned_pathway_week_actions"
   add_foreign_key "ambulatory_weekly_results", "users"
   add_foreign_key "answers", "questionnaire_submissions"
   add_foreign_key "answers", "questions"
@@ -1483,10 +1344,6 @@ ActiveRecord::Schema.define(version: 2024_09_16_083545) do
   add_foreign_key "ltc_facility_assignments", "users"
   add_foreign_key "multiple_choice_answers", "answers"
   add_foreign_key "multiple_choice_answers", "options"
-  add_foreign_key "ndm_drug_claims", "ndm_reports"
-  add_foreign_key "ndm_medical_claims", "ndm_reports"
-  add_foreign_key "ndm_patient_eligiblities", "ndm_reports"
-  add_foreign_key "ndm_providers", "ndm_reports"
   add_foreign_key "notes_template_blocks", "notes_templates"
   add_foreign_key "notes_templates", "users"
   add_foreign_key "options", "questions"

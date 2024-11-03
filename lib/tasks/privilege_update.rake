@@ -40,4 +40,11 @@ namespace :privilege do
         end
       end
   end
+
+  task update_names: :environment do
+    update_customer_association_privilege = Privilege.where(name: "Add Customer Association").first
+    if update_customer_association_privilege.present?
+      update_customer_association_privilege.update(name: "Edit Customer Association", description: "Edit Customer Association")
+    end
+  end
 end

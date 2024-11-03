@@ -8,7 +8,7 @@ class ActionStep < ApplicationRecord
   validates_presence_of :title
 
   def as_json(options = {})
-    super(options).merge(icon_url: icon.present? ? ActionController::Base.helpers.asset_url("category_icons/#{icon}.svg") : "")
+    super(options).merge(icon_url: icon_url)
   end
 
   def serializable_hash(options = nil)
@@ -16,9 +16,13 @@ class ActionStep < ApplicationRecord
       resource_item_ids: get_resource_item_ids,
       action_step_quick_launches: self.action_step_quick_launches,
       action_step_automations: self.action_step_automations,
-      action_step_resources: resources,
-      icon_url: icon.present? ? ActionController::Base.helpers.asset_url("category_icons/#{icon}.svg") : ""
+      action_step_resources: self.resources,
+      icon_url: icon_url,
     )
+  end
+
+  def icon_url
+    icon.present? ? ActionController::Base.helpers.asset_url("category_icons/#{icon}.svg") : ""
   end
 
   def get_resource_item_ids

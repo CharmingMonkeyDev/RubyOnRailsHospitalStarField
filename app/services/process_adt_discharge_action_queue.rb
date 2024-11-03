@@ -5,7 +5,8 @@ class ProcessAdtDischargeActionQueue
     end
 
     def call
-        process_inbound_notif
+        create_action_queue
+        # process_inbound_notif
     end
 
     private
@@ -31,12 +32,10 @@ class ProcessAdtDischargeActionQueue
     end
 
     def create_action_queue
-        related_customers = @user.customers
+        related_customers = user.customers
         related_customers.each do |customer|
-            action = Action.where(customer_id: customer.id, action_type: :adt_alerts).first
-            if action.present?
-                action.update(title: "Patient Discharged")
-            else
+            action = Action.where(customer_id: customer.id, action_type: :adt_alerts, title: "Patient Discharged").first
+            if !action.present?
                 action = Action.create!(
                     action_type: :adt_alerts,
                     title: "Patient Discharged",
@@ -51,11 +50,10 @@ class ProcessAdtDischargeActionQueue
                 action_id: action.id,
                 due_date: Date.today,
             )
-            
-            adt_provider_action = AdtProviderAction.create!(
-                action_queue_id: action_queue.id,
-                adt_patient_notification_id: adt_patient_notification_id
-            )
+            # adt_provider_action = AdtProviderAction.create!(
+            #     action_queue_id: action_queue.id,
+            #     adt_patient_notification_id: adt_patient_notification_id
+            # )
         end
     end
 

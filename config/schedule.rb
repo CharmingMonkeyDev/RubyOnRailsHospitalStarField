@@ -17,6 +17,10 @@ every 1.days, at: '9:00am' do
   rake "generate:recurring_task"
 end
 
+every 1.days, at: '12:30am' do
+  rake "recurring_actions:generate"
+end
+
 every 1.days, at: '9:00am' do
   rake "generate:deferred_task"
 end
